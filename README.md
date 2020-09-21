@@ -1,1 +1,1 @@
-# Banksalad_iOS_-
+# Banksalad_iOS_Choyoonyoung
