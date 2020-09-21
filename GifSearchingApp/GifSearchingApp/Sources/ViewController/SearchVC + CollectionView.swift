@@ -11,7 +11,7 @@ import UIKit
 extension SearchVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return 30
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -41,5 +41,8 @@ extension SearchVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
         let interval = self.collectionView.frame.width / 35
         return interval
     }
-
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.searchTextField.resignFirstResponder()
+    }
 }
