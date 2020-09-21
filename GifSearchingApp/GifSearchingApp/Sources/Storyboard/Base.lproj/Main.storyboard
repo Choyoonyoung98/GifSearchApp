@@ -19,18 +19,24 @@
                                 <rect key="frame" x="20" y="70" width="374" height="48"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="o2C-JF-017">
-                                        <rect key="frame" x="335" y="13.5" width="21" height="21"/>
+                                        <rect key="frame" x="334" y="13.5" width="21" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="o2C-JF-017" secondAttribute="height" multiplier="1:1" id="pWz-jh-OGf"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="키워드를 검색하세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gw5-Tb-3Pu">
-                                        <rect key="frame" x="20" y="1.5" width="305" height="45"/>
+                                        <rect key="frame" x="20" y="1.5" width="304" height="45"/>
                                         <attributedString key="attributedText"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="eo1-tS-XZ6"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwn-15-ZMD">
-                                        <rect key="frame" x="322.5" y="0.0" width="46" height="48"/>
+                                        <rect key="frame" x="321.5" y="0.0" width="46" height="48"/>
+                                        <connections>
+                                            <action selector="searchBtnTouchUpAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aEQ-GN-zOV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -44,7 +50,7 @@
                                     <constraint firstItem="o2C-JF-017" firstAttribute="width" secondItem="Dq2-nY-roV" secondAttribute="width" multiplier="0.0561497" id="KCl-ID-X93"/>
                                     <constraint firstItem="o2C-JF-017" firstAttribute="leading" secondItem="gw5-Tb-3Pu" secondAttribute="trailing" constant="10" id="Lgz-eP-h3J"/>
                                     <constraint firstItem="gw5-Tb-3Pu" firstAttribute="height" secondItem="Dq2-nY-roV" secondAttribute="height" multiplier="0.9375" id="Q0h-KG-jBC"/>
-                                    <constraint firstAttribute="trailing" secondItem="o2C-JF-017" secondAttribute="trailing" constant="18" id="VkK-WK-CqR"/>
+                                    <constraint firstAttribute="trailing" secondItem="o2C-JF-017" secondAttribute="leading" multiplier="70/66" constant="20" id="VkK-WK-CqR"/>
                                     <constraint firstItem="gw5-Tb-3Pu" firstAttribute="centerY" secondItem="Dq2-nY-roV" secondAttribute="centerY" id="XNq-Qc-7O6"/>
                                     <constraint firstAttribute="width" secondItem="Dq2-nY-roV" secondAttribute="height" multiplier="187:24" id="kDR-HS-iL9"/>
                                 </constraints>
@@ -59,6 +65,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="searchTextField" destination="gw5-Tb-3Pu" id="G2S-f6-Qov"/>
                         <outlet property="searchView" destination="Dq2-nY-roV" id="R3Y-u4-Eiq"/>
                     </connections>
                 </viewController>
