@@ -12,6 +12,7 @@ class SearchVC: UIViewController {
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var showMoreGifBtn: UIButton!
     
     let cellIdentifier = "cell"
     
@@ -31,7 +32,8 @@ class SearchVC: UIViewController {
     }
     
     func setStyle() {
-        searchView.circleRadius()
+        self.searchView.circleRadius()
+        self.showMoreGifBtn.alpha = 0
     }
 }
 

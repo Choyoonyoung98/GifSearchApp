@@ -57,8 +57,8 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xh4-h9-CGA">
-                                <rect key="frame" x="10" y="114.5" width="394" height="698.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="10" y="114.5" width="394" height="668.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="VGl-AQ-A9Z">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -94,17 +94,28 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Rp9-9c-tsb"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fo6-10-rRz">
+                                <rect key="frame" x="139" y="753" width="136" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Fo6-10-rRz" secondAttribute="height" multiplier="136:45" id="IFS-dS-V9z"/>
+                                </constraints>
+                                <state key="normal" title="더보기"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Dq2-nY-roV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9Ap-1a-TlB"/>
                             <constraint firstItem="xh4-h9-CGA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="CxD-zj-PX4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Fo6-10-rRz" secondAttribute="bottom" constant="15" id="JXM-hG-n3z"/>
                             <constraint firstItem="Dq2-nY-roV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.903382" id="PhW-PK-36P"/>
                             <constraint firstItem="Dq2-nY-roV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="59/818" constant="8" symbolic="YES" id="UZZ-qC-EdQ"/>
                             <constraint firstItem="xh4-h9-CGA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="W8V-Ej-qan"/>
+                            <constraint firstItem="Fo6-10-rRz" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.328502" id="aT5-qO-GTO"/>
+                            <constraint firstItem="Fo6-10-rRz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ayF-gG-Dxr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xh4-h9-CGA" secondAttribute="trailing" constant="10" id="ndR-ff-UNC"/>
                             <constraint firstItem="xh4-h9-CGA" firstAttribute="top" secondItem="Dq2-nY-roV" secondAttribute="bottom" id="pD7-9Y-Pkj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xh4-h9-CGA" secondAttribute="bottom" id="rcN-Wj-Pin"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xh4-h9-CGA" secondAttribute="bottom" constant="30" id="rcN-Wj-Pin"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -113,6 +124,7 @@
                         <outlet property="collectionView" destination="xh4-h9-CGA" id="EgP-3b-9tD"/>
                         <outlet property="searchTextField" destination="gw5-Tb-3Pu" id="G2S-f6-Qov"/>
                         <outlet property="searchView" destination="Dq2-nY-roV" id="R3Y-u4-Eiq"/>
+                        <outlet property="showMoreGifBtn" destination="Fo6-10-rRz" id="4Zk-bM-dE6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

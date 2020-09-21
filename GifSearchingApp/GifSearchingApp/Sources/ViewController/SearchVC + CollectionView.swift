@@ -45,4 +45,15 @@ extension SearchVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.searchTextField.resignFirstResponder()
     }
+    
+    //TODO: 무한스크롤
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        if offsetY > contentHeight - scrollView.frame.height {
+            UIView.animate(withDuration: 0.3) {
+                self.showMoreGifBtn.alpha = 1
+            }
+        }
+    }
 }
