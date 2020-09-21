@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HFP-y2-v0Q">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--SearchVC-->
+        <!--검색-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SearchVC" customModule="GifSearchingApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dq2-nY-roV">
-                                <rect key="frame" x="20" y="70" width="374" height="48"/>
+                                <rect key="frame" x="20" y="66.5" width="374" height="48"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="o2C-JF-017">
                                         <rect key="frame" x="334" y="13.5" width="21" height="21"/>
@@ -64,6 +64,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="검색" image="searchIcon" id="Rbx-nx-7Ez"/>
                     <connections>
                         <outlet property="searchTextField" destination="gw5-Tb-3Pu" id="G2S-f6-Qov"/>
                         <outlet property="searchView" destination="Dq2-nY-roV" id="R3Y-u4-Eiq"/>
@@ -71,10 +72,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+            <point key="canvasLocation" x="872" y="-137"/>
+        </scene>
+        <!--즐겨찾기-->
+        <scene sceneID="XEs-CG-Otj">
+            <objects>
+                <viewController id="ffh-4S-Fst" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DZn-9Y-1zf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="elZ-e3-Ct4"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="즐겨찾기" image="star" catalog="system" id="NRz-qj-RVf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s7n-fx-IEJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="835" y="568"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="neL-JV-gw9">
+            <objects>
+                <tabBarController id="HFP-y2-v0Q" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="mlE-Ix-2rB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="selectedImageTintColor" red="0.55294117649999996" green="0.79607843140000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="MEG-v9-rOC"/>
+                        <segue destination="ffh-4S-Fst" kind="relationship" relationship="viewControllers" id="NCq-4h-bMn"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I7U-c6-mSY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-233" y="53"/>
         </scene>
     </scenes>
     <resources>
         <image name="searchIcon" width="21" height="21"/>
+        <image name="star" catalog="system" width="128" height="116"/>
     </resources>
 </document>

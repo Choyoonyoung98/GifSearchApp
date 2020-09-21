@@ -24,6 +24,8 @@ class SearchVC: UIViewController {
     
     @IBAction func searchBtnTouchUpAction(_ sender: Any) {
         self.view.endEditing(true)
+        //MARK: 검색 버튼 선택 시, 검색 시작
+        
     }
     
     func setStyle() {
