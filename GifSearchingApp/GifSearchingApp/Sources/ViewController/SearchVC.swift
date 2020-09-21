@@ -11,6 +11,9 @@ import UIKit
 class SearchVC: UIViewController {
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    let cellIdentifier = "cell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,3 +35,4 @@ class SearchVC: UIViewController {
         searchView.circleRadius()
     }
 }
+
