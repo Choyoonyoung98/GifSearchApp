@@ -79,13 +79,10 @@
 		4C03104F2518ACEE002A38B0 /* GifSearchingApp */ = {
 			isa = PBXGroup;
 			children = (
-				4C0310502518ACEE002A38B0 /* AppDelegate.swift */,
-				4C0310522518ACEE002A38B0 /* SceneDelegate.swift */,
-				4C0310542518ACEE002A38B0 /* ViewController.swift */,
-				4C0310562518ACEE002A38B0 /* Main.storyboard */,
-				4C0310592518ACF3002A38B0 /* Assets.xcassets */,
-				4C03105B2518ACF3002A38B0 /* LaunchScreen.storyboard */,
-				4C03105E2518ACF3002A38B0 /* Info.plist */,
+				4C0310722518AF39002A38B0 /* Resources */,
+				4C0310732518AF4D002A38B0 /* Sources */,
+				4C0310742518AF5E002A38B0 /* Utils */,
+				4C0310752518AF68002A38B0 /* SupportingFiles */,
 			);
 			path = GifSearchingApp;
 			sourceTree = "<group>";
@@ -97,6 +94,73 @@
 				4C0310692518ACF3002A38B0 /* Info.plist */,
 			);
 			path = GifSearchingAppTests;
+			sourceTree = "<group>";
+		};
+		4C0310722518AF39002A38B0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4C0310592518ACF3002A38B0 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4C0310732518AF4D002A38B0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4C0310762518AF91002A38B0 /* Storyboard */,
+				4C0310772518AF9C002A38B0 /* ViewController */,
+				4C0310782518AFA4002A38B0 /* View */,
+				4C0310792518AFAA002A38B0 /* Models */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4C0310742518AF5E002A38B0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4C0310752518AF68002A38B0 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4C0310502518ACEE002A38B0 /* AppDelegate.swift */,
+				4C0310522518ACEE002A38B0 /* SceneDelegate.swift */,
+				4C03105E2518ACF3002A38B0 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		4C0310762518AF91002A38B0 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4C03105B2518ACF3002A38B0 /* LaunchScreen.storyboard */,
+				4C0310562518ACEE002A38B0 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		4C0310772518AF9C002A38B0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4C0310542518ACEE002A38B0 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4C0310782518AFA4002A38B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C0310792518AFAA002A38B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,7 +428,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
-				INFOPLIST_FILE = GifSearchingApp/Info.plist;
+				INFOPLIST_FILE = GifSearchingApp/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -382,7 +446,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
-				INFOPLIST_FILE = GifSearchingApp/Info.plist;
+				INFOPLIST_FILE = GifSearchingApp/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
