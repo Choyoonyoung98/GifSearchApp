@@ -79,11 +79,21 @@
                                                         <constraint firstAttribute="width" secondItem="zyY-wD-ucP" secondAttribute="height" multiplier="1:1" id="lgY-Fn-M3h"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJq-Qg-Suq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                    <connections>
+                                                        <segue destination="ApG-eS-Ovr" kind="presentation" id="a3p-LS-eV3"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="mJq-Qg-Suq" firstAttribute="centerX" secondItem="zyY-wD-ucP" secondAttribute="centerX" id="FYV-9e-yOz"/>
                                                 <constraint firstItem="zyY-wD-ucP" firstAttribute="centerX" secondItem="7Ju-vW-qte" secondAttribute="centerX" id="HCY-eB-6Jf"/>
                                                 <constraint firstItem="zyY-wD-ucP" firstAttribute="centerY" secondItem="7Ju-vW-qte" secondAttribute="centerY" id="Htv-hc-MbD"/>
+                                                <constraint firstItem="mJq-Qg-Suq" firstAttribute="height" secondItem="zyY-wD-ucP" secondAttribute="height" id="PZe-JJ-qvQ"/>
+                                                <constraint firstItem="mJq-Qg-Suq" firstAttribute="width" secondItem="zyY-wD-ucP" secondAttribute="width" id="eRz-XH-aeX"/>
                                                 <constraint firstItem="zyY-wD-ucP" firstAttribute="width" secondItem="7Ju-vW-qte" secondAttribute="width" id="fWw-PB-65M"/>
+                                                <constraint firstItem="mJq-Qg-Suq" firstAttribute="centerY" secondItem="zyY-wD-ucP" secondAttribute="centerY" id="kTw-tP-77G"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="120" height="120"/>
@@ -130,6 +140,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="871.01449275362324" y="-137.27678571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Wp5-dC-HNs">
+            <objects>
+                <viewController id="ApG-eS-Ovr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="csS-w1-hid">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Z9U-oD-XOY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Yv-cC-mnX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1593" y="-129"/>
         </scene>
         <!--즐겨찾기-->
         <scene sceneID="XEs-CG-Otj">
