@@ -99,6 +99,8 @@
 		4C0310722518AF39002A38B0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4C03107B2518B318002A38B0 /* Extensions */,
+				4C03107C2518B329002A38B0 /* Network */,
 				4C0310592518ACF3002A38B0 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -110,7 +112,8 @@
 				4C0310762518AF91002A38B0 /* Storyboard */,
 				4C0310772518AF9C002A38B0 /* ViewController */,
 				4C0310782518AFA4002A38B0 /* View */,
-				4C0310792518AFAA002A38B0 /* Models */,
+				4C0310792518AFAA002A38B0 /* Model */,
+				4C03107A2518B22C002A38B0 /* Service */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -156,11 +159,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		4C0310792518AFAA002A38B0 /* Models */ = {
+		4C0310792518AFAA002A38B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Models;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C03107A2518B22C002A38B0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4C03107B2518B318002A38B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4C03107C2518B329002A38B0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
