@@ -26,9 +26,6 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.searchTextField.text = ""
-        self.offset = 0
-        self.gifURLList = []
         setStyle()
     }
 
