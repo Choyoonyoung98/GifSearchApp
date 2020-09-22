@@ -17,7 +17,6 @@ class SearchVC: UIViewController {
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var showMoreGifBtn: UIButton!
     
     let cellIdentifier = "cell"
     var gifURLList: [GifInfo] = []
@@ -44,15 +43,10 @@ class SearchVC: UIViewController {
     @IBAction func searchMoreBtnTouchUpAction(_ sender: Any) {
         self.offset += 25;
         self.getGifList(keyword: self.gsno(self.searchTextField.text), offset: self.offset)
-        self.showMoreGifBtn.alpha = 0
-        self.showMoreGifBtn.isEnabled = false
     }
-    
-    
+
     func setStyle() {
         self.searchView.circleRadius()
-        self.showMoreGifBtn.alpha = 0
-        self.showMoreGifBtn.isEnabled = false
     }
 }
 
