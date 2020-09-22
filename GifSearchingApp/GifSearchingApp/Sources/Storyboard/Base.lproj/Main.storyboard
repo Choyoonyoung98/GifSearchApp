@@ -1,24 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HFP-y2-v0Q">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--검색-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SearchVC" customModule="GifSearchingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dq2-nY-roV">
+                                <rect key="frame" x="20" y="66.5" width="374" height="48"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="o2C-JF-017">
+                                        <rect key="frame" x="334" y="13.5" width="21" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="o2C-JF-017" secondAttribute="height" multiplier="1:1" id="pWz-jh-OGf"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="키워드를 검색하세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gw5-Tb-3Pu">
+                                        <rect key="frame" x="20" y="1.5" width="304" height="45"/>
+                                        <attributedString key="attributedText"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="eo1-tS-XZ6"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwn-15-ZMD">
+                                        <rect key="frame" x="321.5" y="0.0" width="46" height="48"/>
+                                        <connections>
+                                            <action selector="searchBtnTouchUpAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aEQ-GN-zOV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="gw5-Tb-3Pu" firstAttribute="leading" secondItem="Dq2-nY-roV" secondAttribute="leading" constant="20" id="2ts-TA-PQB"/>
+                                    <constraint firstItem="lwn-15-ZMD" firstAttribute="centerY" secondItem="o2C-JF-017" secondAttribute="centerY" id="7Vx-FI-hRQ"/>
+                                    <constraint firstItem="o2C-JF-017" firstAttribute="centerY" secondItem="Dq2-nY-roV" secondAttribute="centerY" id="8yj-Yk-a2x"/>
+                                    <constraint firstItem="lwn-15-ZMD" firstAttribute="width" secondItem="o2C-JF-017" secondAttribute="width" multiplier="2.19048" id="Ad3-bT-Z0S"/>
+                                    <constraint firstItem="lwn-15-ZMD" firstAttribute="centerX" secondItem="o2C-JF-017" secondAttribute="centerX" id="CsB-FN-tJo"/>
+                                    <constraint firstItem="lwn-15-ZMD" firstAttribute="height" secondItem="o2C-JF-017" secondAttribute="height" multiplier="2.28571" id="CsJ-wY-gUN"/>
+                                    <constraint firstItem="o2C-JF-017" firstAttribute="width" secondItem="Dq2-nY-roV" secondAttribute="width" multiplier="0.0561497" id="KCl-ID-X93"/>
+                                    <constraint firstItem="o2C-JF-017" firstAttribute="leading" secondItem="gw5-Tb-3Pu" secondAttribute="trailing" constant="10" id="Lgz-eP-h3J"/>
+                                    <constraint firstItem="gw5-Tb-3Pu" firstAttribute="height" secondItem="Dq2-nY-roV" secondAttribute="height" multiplier="0.9375" id="Q0h-KG-jBC"/>
+                                    <constraint firstAttribute="trailing" secondItem="o2C-JF-017" secondAttribute="leading" multiplier="70/66" constant="20" id="VkK-WK-CqR"/>
+                                    <constraint firstItem="gw5-Tb-3Pu" firstAttribute="centerY" secondItem="Dq2-nY-roV" secondAttribute="centerY" id="XNq-Qc-7O6"/>
+                                    <constraint firstAttribute="width" secondItem="Dq2-nY-roV" secondAttribute="height" multiplier="187:24" id="kDR-HS-iL9"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xh4-h9-CGA">
+                                <rect key="frame" x="10" y="114.5" width="394" height="668.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="VGl-AQ-A9Z">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="CKC-bl-6az" customClass="GifCVCell" customModule="GifSearchingApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7Ju-vW-qte">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="zyY-wD-ucP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="zyY-wD-ucP" secondAttribute="height" multiplier="1:1" id="lgY-Fn-M3h"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJq-Qg-Suq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                    <connections>
+                                                        <segue destination="ApG-eS-Ovr" kind="presentation" id="a3p-LS-eV3"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mJq-Qg-Suq" firstAttribute="centerX" secondItem="zyY-wD-ucP" secondAttribute="centerX" id="FYV-9e-yOz"/>
+                                                <constraint firstItem="zyY-wD-ucP" firstAttribute="centerX" secondItem="7Ju-vW-qte" secondAttribute="centerX" id="HCY-eB-6Jf"/>
+                                                <constraint firstItem="zyY-wD-ucP" firstAttribute="centerY" secondItem="7Ju-vW-qte" secondAttribute="centerY" id="Htv-hc-MbD"/>
+                                                <constraint firstItem="mJq-Qg-Suq" firstAttribute="height" secondItem="zyY-wD-ucP" secondAttribute="height" id="PZe-JJ-qvQ"/>
+                                                <constraint firstItem="mJq-Qg-Suq" firstAttribute="width" secondItem="zyY-wD-ucP" secondAttribute="width" id="eRz-XH-aeX"/>
+                                                <constraint firstItem="zyY-wD-ucP" firstAttribute="width" secondItem="7Ju-vW-qte" secondAttribute="width" id="fWw-PB-65M"/>
+                                                <constraint firstItem="mJq-Qg-Suq" firstAttribute="centerY" secondItem="zyY-wD-ucP" secondAttribute="centerY" id="kTw-tP-77G"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="120" height="120"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Kbt-kJ-eVn"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Rp9-9c-tsb"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fo6-10-rRz">
+                                <rect key="frame" x="139" y="753" width="136" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Fo6-10-rRz" secondAttribute="height" multiplier="136:45" id="IFS-dS-V9z"/>
+                                </constraints>
+                                <state key="normal" title="더보기"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Dq2-nY-roV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9Ap-1a-TlB"/>
+                            <constraint firstItem="xh4-h9-CGA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="CxD-zj-PX4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Fo6-10-rRz" secondAttribute="bottom" constant="15" id="JXM-hG-n3z"/>
+                            <constraint firstItem="Dq2-nY-roV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.903382" id="PhW-PK-36P"/>
+                            <constraint firstItem="Dq2-nY-roV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="59/818" constant="8" symbolic="YES" id="UZZ-qC-EdQ"/>
+                            <constraint firstItem="xh4-h9-CGA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="W8V-Ej-qan"/>
+                            <constraint firstItem="Fo6-10-rRz" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.328502" id="aT5-qO-GTO"/>
+                            <constraint firstItem="Fo6-10-rRz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ayF-gG-Dxr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xh4-h9-CGA" secondAttribute="trailing" constant="10" id="ndR-ff-UNC"/>
+                            <constraint firstItem="xh4-h9-CGA" firstAttribute="top" secondItem="Dq2-nY-roV" secondAttribute="bottom" id="pD7-9Y-Pkj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xh4-h9-CGA" secondAttribute="bottom" constant="30" id="rcN-Wj-Pin"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="검색" image="searchIcon" id="Rbx-nx-7Ez"/>
+                    <connections>
+                        <outlet property="collectionView" destination="xh4-h9-CGA" id="EgP-3b-9tD"/>
+                        <outlet property="searchTextField" destination="gw5-Tb-3Pu" id="G2S-f6-Qov"/>
+                        <outlet property="searchView" destination="Dq2-nY-roV" id="R3Y-u4-Eiq"/>
+                        <outlet property="showMoreGifBtn" destination="Fo6-10-rRz" id="4Zk-bM-dE6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="871.01449275362324" y="-137.27678571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Wp5-dC-HNs">
+            <objects>
+                <viewController id="ApG-eS-Ovr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="csS-w1-hid">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Z9U-oD-XOY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Yv-cC-mnX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1593" y="-129"/>
+        </scene>
+        <!--즐겨찾기-->
+        <scene sceneID="XEs-CG-Otj">
+            <objects>
+                <viewController id="ffh-4S-Fst" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DZn-9Y-1zf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="elZ-e3-Ct4"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="즐겨찾기" image="star" catalog="system" id="NRz-qj-RVf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s7n-fx-IEJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="835" y="568"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="neL-JV-gw9">
+            <objects>
+                <tabBarController id="HFP-y2-v0Q" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="mlE-Ix-2rB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="selectedImageTintColor" red="0.55294117649999996" green="0.79607843140000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="MEG-v9-rOC"/>
+                        <segue destination="ffh-4S-Fst" kind="relationship" relationship="viewControllers" id="NCq-4h-bMn"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I7U-c6-mSY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-233" y="53"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultImage" width="400" height="400"/>
+        <image name="searchIcon" width="21" height="21"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+    </resources>
 </document>
