@@ -7,15 +7,25 @@
 //
 
 import UIKit
+import Kingfisher
 
 extension SearchVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return self.gifURLList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? GifCVCell
+        let url = gifURLList[indexPath.row].gifURL
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: url)
+            DispatchQueue.main.async {
+                cell?.imageView.image = UIImage(data: data!)
+            }
+        }
+        if let gifId = Int(gifURLList[indexPath.row].id) {
+            cell?.tag = gifId
+        }
         return cell!
     }
     
@@ -48,11 +58,41 @@ extension SearchVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     
     //TODO: 무한스크롤
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if self.collectionView.window == nil {
+            return
+        }
+        let offsetTolerance = CGFloat(30) //연속되어 매우 많이 호출되는 경우가 발생하여 이를 해결하기 위한 추가 구현
+        
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
-        if offsetY > contentHeight - scrollView.frame.height {
-            UIView.animate(withDuration: 0.3) {
-                self.showMoreGifBtn.alpha = 1
+        
+        if offsetY > contentHeight - scrollView.frame.height + offsetTolerance, !scrollViewReachedBottom {
+            self.scrollViewReachedBottom = true
+            self.offset += 25
+            getGifList(keyword: gsno(self.searchTextField.text), offset: offset)
+            self.scrollViewReachedBottom = false
+        }
+    }
+}
+
+extension SearchVC: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if let cellToUpdate = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? GifCVCell {
+                if indexPath.row < gifURLList.count {
+                    let url = gifURLList[indexPath.row].gifURL
+                    
+                    DispatchQueue.global().async {
+                        let data = try? Data(contentsOf: url)
+                        DispatchQueue.main.async {
+                            cellToUpdate.imageView.image = UIImage(data: data!)
+                        }
+                    }
+                    if let gifId = Int(gifURLList[indexPath.row].id) {
+                        cellToUpdate.tag = gifId
+                    }
+                }
             }
         }
     }

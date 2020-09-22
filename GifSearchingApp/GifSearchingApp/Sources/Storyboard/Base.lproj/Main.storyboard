@@ -73,7 +73,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="zyY-wD-ucP">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="zyY-wD-ucP">
                                                     <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="zyY-wD-ucP" secondAttribute="height" multiplier="1:1" id="lgY-Fn-M3h"/>
@@ -82,6 +82,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJq-Qg-Suq">
                                                     <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                     <connections>
+                                                        <action selector="searchMoreBtnTouchUpAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SVh-H1-tPT"/>
                                                         <segue destination="ApG-eS-Ovr" kind="presentation" id="a3p-LS-eV3"/>
                                                     </connections>
                                                 </button>
@@ -97,11 +98,16 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="120" height="120"/>
+                                        <connections>
+                                            <outlet property="btn" destination="mJq-Qg-Suq" id="bFb-iQ-elh"/>
+                                            <outlet property="imageView" destination="zyY-wD-ucP" id="fOB-Or-z4c"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Kbt-kJ-eVn"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Rp9-9c-tsb"/>
+                                    <outlet property="prefetchDataSource" destination="BYZ-38-t0r" id="KW7-iN-KFn"/>
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fo6-10-rRz">

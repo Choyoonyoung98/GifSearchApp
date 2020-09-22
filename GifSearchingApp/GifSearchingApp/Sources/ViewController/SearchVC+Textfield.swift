@@ -16,6 +16,9 @@ extension SearchVC: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.searchTextField.resignFirstResponder()
+        self.gifURLList.removeAll()
+        offset = 0
+        getGifList(keyword: gsno(self.searchTextField.text), offset: offset)
         //MARK: 엔터 선택 시, 검색 시작
         return true
     }

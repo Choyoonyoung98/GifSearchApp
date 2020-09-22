@@ -22,7 +22,7 @@ class DataModel: Codable {
     var is_sticker: Int?
     var rating: String?
     var analytics: AnalayticsModel?
-    
+    var images: ImageModel?
     var type: String?
     var import_datetime: String?
     var url: String?
@@ -37,6 +37,14 @@ class DataModel: Codable {
     var source_tld: String?
     var user_tags: [String]?
     var content_url: String?
+}
+
+class ImageModel: Codable {
+    var fixed_width_small_still: ImageDetailModel?
+}
+
+class ImageDetailModel: Codable {
+    var url: String?
 }
 
 class AnalayticsModel: Codable {
@@ -68,4 +76,3 @@ class PaginationModel: Codable {
     var total_count: Int?
     var count: Int?
 }
-

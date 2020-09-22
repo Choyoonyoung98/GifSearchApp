@@ -8,6 +8,7 @@ target 'GifSearchingApp' do
   # Pods for GifSearchingApp
   pod 'Alamofire', '4.7.3'
   pod 'SwiftyJSON'
+  pod 'Kingfisher'
   
   target 'GifSearchingAppTests' do
     inherit! :search_paths

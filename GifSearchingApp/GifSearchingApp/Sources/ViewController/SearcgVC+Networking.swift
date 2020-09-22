@@ -8,20 +8,34 @@
 
 import Foundation
 extension SearchVC {
-    func postGifList(keyword: String) {
+    func getGifList(keyword: String, offset: Int) {
         let params: [String: Any] = [
              "api_key": "EOxjg9RPBbUJQyzL8yag8Z8u6tN6zauH",
-               "q": "banana",
-               "limit": 1,
-               "offset": 0
+               "q": keyword,
+               "limit": 24,
+               "offset": offset
         ]
+        
         GetGifSearchService.sharedInstance.getGifList(params: params) { (result) in
             switch result {
                 case .networkSuccess(let data): //200
                     let gifData = data as? GifSearchModel
                     if let resResult = gifData {
                         //TODO: 데이터 뷰에 뿌려주기
-                        print(resResult.data?.count)
+                        if let resultData = resResult.data {
+                            for res in resultData {
+                                let gifTitle = self.gsno(res.title)
+                                let gifURL = URL(string: self.gsno(res.images?.fixed_width_small_still?.url))!
+                                let gifId = self.gsno(res.id)
+                                self.gifURLList.append(GifInfo(title: gifTitle, gifURL: gifURL, id: gifId))
+                            }
+                            for a in self.gifURLList {
+                                print(a.title)
+                            }
+                            print(self.gifURLList.count)
+                            
+                            self.collectionView.reloadData()
+                        }
                     }
                     break
                 case .badRequest: //400
