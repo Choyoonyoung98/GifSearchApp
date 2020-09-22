@@ -12,7 +12,7 @@ extension SearchVC {
         let params: [String: Any] = [
              "api_key": "EOxjg9RPBbUJQyzL8yag8Z8u6tN6zauH",
                "q": "banana",
-               "limit": 25,
+               "limit": 1,
                "offset": 0
         ]
         GetGifSearchService.sharedInstance.getGifList(params: params) { (result) in
@@ -21,6 +21,7 @@ extension SearchVC {
                     let gifData = data as? GifSearchModel
                     if let resResult = gifData {
                         //TODO: 데이터 뷰에 뿌려주기
+                        print(resResult.data?.count)
                     }
                     break
                 case .badRequest: //400

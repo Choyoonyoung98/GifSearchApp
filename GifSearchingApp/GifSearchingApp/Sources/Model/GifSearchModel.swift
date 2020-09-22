@@ -8,31 +8,45 @@
 
 import Foundation
 class GifSearchModel: Codable {
-    var data: GifModel?
-    var pagination: PaginationModel?
+    var data: [DataModel]?
     var meta: MetaModel?
+    var pagination: PaginationModel?
 }
 
-class GifModel: Codable {
-    var type: String?
-    var id: String?
+class DataModel: Codable {
     var slug: String?
-    var url: String?
-    var bitly_url: String?
-    var embed_url: String?
-    var username: String?
-    var source: String?
-    var rating: String?
-    var content_url: String?
-    var user: User?
-    var source_tld: String?
-    var source_post_url: String?
-    var update_datetime: String?
-    var create_datetime: String?
-    var import_datetime: String?
-    var trending_datetime: String?
-    var images: Images?
+    var bitly_gif_url: String?
     var title: String?
+    var source: String?
+    var tags: [String]?
+    var is_sticker: Int?
+    var rating: String?
+    var analytics: AnalayticsModel?
+    
+    var type: String?
+    var import_datetime: String?
+    var url: String?
+    var analytics_response_payload: String?
+    var username: String?
+    var featured_tags: [String]?
+    var bitly_url: String?
+    var id: String?
+    var embed_url: String?
+    var trending_datetime: String?
+    var source_post_url: String?
+    var source_tld: String?
+    var user_tags: [String]?
+    var content_url: String?
+}
+
+class AnalayticsModel: Codable {
+    var onClick: URLModel?
+    var onsent: URLModel?
+    var onload: URLModel?
+}
+
+class URLModel: Codable {
+    var url: String?
 }
 
 class User: Codable {
@@ -43,15 +57,10 @@ class User: Codable {
     var display_name: String?
 }
 
-class Images: Codable {
-    var url: String?
-    var width: String?
-    var height: String?
-    var size: String?
-    var mp4: String?
-    var mp4_size: String?
-    var webp: String?
-    var webp_size: String?
+class MetaModel: Codable {
+    var msg: String?
+    var status: Int?
+    var response_id: String?
 }
 
 class PaginationModel: Codable {
@@ -60,8 +69,3 @@ class PaginationModel: Codable {
     var count: Int?
 }
 
-class MetaModel: Codable {
-    var msg: String?
-    var status: Int?
-    var response_id: String?
-}
