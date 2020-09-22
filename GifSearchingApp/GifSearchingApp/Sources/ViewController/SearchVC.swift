@@ -25,15 +25,13 @@ class SearchVC: UIViewController {
     var scrollViewReachedBottom: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        setStyle()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        
+        self.searchTextField.text = ""
         self.offset = 0
         self.gifURLList = []
+        setStyle()
     }
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
