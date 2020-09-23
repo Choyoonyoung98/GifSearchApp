@@ -138,7 +138,7 @@
                                     <constraint firstAttribute="width" secondItem="8L3-U3-wmr" secondAttribute="height" multiplier="1:1" id="6oj-3r-yjc"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="u2Q-4K-4Km">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_empty" translatesAutoresizingMaskIntoConstraints="NO" id="u2Q-4K-4Km">
                                 <rect key="frame" x="299.5" y="170.5" width="65" height="65"/>
                                 <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -164,6 +164,12 @@
                                     <action selector="shareTouchUpAction:" destination="ApG-eS-Ovr" eventType="touchUpInside" id="Boq-mN-dn2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2y-cq-6Rc">
+                                <rect key="frame" x="299.5" y="170.5" width="65" height="65"/>
+                                <connections>
+                                    <action selector="addToMyFavoriteTouchUpAction:" destination="ApG-eS-Ovr" eventType="touchUpInside" id="eCl-nF-BZy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -171,6 +177,9 @@
                             <constraint firstItem="fqr-BN-ejW" firstAttribute="centerX" secondItem="Z9U-oD-XOY" secondAttribute="centerX" id="DwZ-Rk-Wee"/>
                             <constraint firstItem="fqr-BN-ejW" firstAttribute="top" secondItem="IVi-fy-hoI" secondAttribute="bottom" constant="65" id="G9c-C2-cwq"/>
                             <constraint firstItem="u2Q-4K-4Km" firstAttribute="centerY" secondItem="8L3-U3-wmr" secondAttribute="top" id="JLO-0j-eCQ"/>
+                            <constraint firstItem="h2y-cq-6Rc" firstAttribute="height" secondItem="u2Q-4K-4Km" secondAttribute="height" id="Syz-3F-u0v"/>
+                            <constraint firstItem="h2y-cq-6Rc" firstAttribute="centerY" secondItem="u2Q-4K-4Km" secondAttribute="centerY" id="ZYr-0h-fXb"/>
+                            <constraint firstItem="h2y-cq-6Rc" firstAttribute="centerX" secondItem="u2Q-4K-4Km" secondAttribute="centerX" id="afM-f1-BEG"/>
                             <constraint firstItem="fqr-BN-ejW" firstAttribute="width" secondItem="8L3-U3-wmr" secondAttribute="width" id="fYg-ye-GTt"/>
                             <constraint firstItem="u2Q-4K-4Km" firstAttribute="centerX" secondItem="8L3-U3-wmr" secondAttribute="trailing" id="gen-67-can"/>
                             <constraint firstItem="8L3-U3-wmr" firstAttribute="centerX" secondItem="Z9U-oD-XOY" secondAttribute="centerX" id="oom-m2-3qI"/>
@@ -179,18 +188,20 @@
                             <constraint firstItem="8L3-U3-wmr" firstAttribute="baseline" secondItem="Z9U-oD-XOY" secondAttribute="centerY" id="ueE-XV-Nvp"/>
                             <constraint firstItem="u2Q-4K-4Km" firstAttribute="width" secondItem="8L3-U3-wmr" secondAttribute="width" multiplier="0.26" id="vz8-Hq-13a"/>
                             <constraint firstItem="8L3-U3-wmr" firstAttribute="width" secondItem="csS-w1-hid" secondAttribute="width" multiplier="0.603865" id="wKa-ih-cWN"/>
+                            <constraint firstItem="h2y-cq-6Rc" firstAttribute="width" secondItem="u2Q-4K-4Km" secondAttribute="width" id="xtU-rZ-IdG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z9U-oD-XOY"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="8L3-U3-wmr" id="cme-hs-Z0c"/>
                         <outlet property="shareBtn" destination="fqr-BN-ejW" id="Ela-eX-rdi"/>
+                        <outlet property="starImageView" destination="u2Q-4K-4Km" id="mZb-DN-6il"/>
                         <outlet property="titleLabel" destination="IVi-fy-hoI" id="xcM-Hk-J6h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Yv-cC-mnX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1739" y="-137"/>
+            <point key="canvasLocation" x="1737.68115942029" y="-137.27678571428569"/>
         </scene>
         <!--즐겨찾기-->
         <scene sceneID="XEs-CG-Otj">
@@ -231,5 +242,6 @@
         <image name="defaultImage" width="400" height="400"/>
         <image name="searchIcon" width="21" height="21"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star_empty" width="512" height="512"/>
     </resources>
 </document>

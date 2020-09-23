@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C01489A251B255800B49BC0 /* GifInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C014899251B255800B49BC0 /* GifInfo.swift */; };
 		4C01489C251B30D900B49BC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C01489B251B30D900B49BC0 /* Main.storyboard */; };
+		4C01489E251B5BB300B49BC0 /* FavoriteGifCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01489D251B5BB300B49BC0 /* FavoriteGifCache.swift */; };
 		4C0310512518ACEE002A38B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0310502518ACEE002A38B0 /* AppDelegate.swift */; };
 		4C0310532518ACEE002A38B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0310522518ACEE002A38B0 /* SceneDelegate.swift */; };
 		4C03105A2518ACF3002A38B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0310592518ACF3002A38B0 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		4B3F052B5830172B5C713533 /* Pods-GifSearchingAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GifSearchingAppTests.release.xcconfig"; path = "Target Support Files/Pods-GifSearchingAppTests/Pods-GifSearchingAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		4C014899251B255800B49BC0 /* GifInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifInfo.swift; sourceTree = "<group>"; };
 		4C01489B251B30D900B49BC0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4C01489D251B5BB300B49BC0 /* FavoriteGifCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGifCache.swift; sourceTree = "<group>"; };
 		4C03104D2518ACEE002A38B0 /* GifSearchingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GifSearchingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0310502518ACEE002A38B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C0310522518ACEE002A38B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			children = (
 				4C7970772519AC90001AE74A /* GifSearchModel.swift */,
 				4C014899251B255800B49BC0 /* GifInfo.swift */,
+				4C01489D251B5BB300B49BC0 /* FavoriteGifCache.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				4C7970782519AC90001AE74A /* GifSearchModel.swift in Sources */,
 				4C0310802518C9D4002A38B0 /* UIView+Extension.swift in Sources */,
 				4C0310532518ACEE002A38B0 /* SceneDelegate.swift in Sources */,
+				4C01489E251B5BB300B49BC0 /* FavoriteGifCache.swift in Sources */,
 				4C03108C2518FEA9002A38B0 /* APIService.swift in Sources */,
 				4C0310862518E03C002A38B0 /* SearchVC + CollectionView.swift in Sources */,
 				4C0310822518CFF8002A38B0 /* SearchVC+Textfield.swift in Sources */,

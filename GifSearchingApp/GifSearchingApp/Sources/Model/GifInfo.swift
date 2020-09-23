@@ -7,7 +7,7 @@
 //
 import Foundation
 
-struct GifInfo {
+struct GifInfo: Codable {
     var title: String
     var url: URL
     var id: String
