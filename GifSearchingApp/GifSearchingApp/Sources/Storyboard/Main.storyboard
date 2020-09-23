@@ -57,7 +57,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xh4-h9-CGA">
-                                <rect key="frame" x="10" y="114.5" width="394" height="668.5"/>
+                                <rect key="frame" x="10" y="114.5" width="394" height="698.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="VGl-AQ-A9Z">
                                     <size key="itemSize" width="128" height="128"/>
@@ -108,7 +108,7 @@
                             <constraint firstItem="xh4-h9-CGA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="W8V-Ej-qan"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xh4-h9-CGA" secondAttribute="trailing" constant="10" id="ndR-ff-UNC"/>
                             <constraint firstItem="xh4-h9-CGA" firstAttribute="top" secondItem="Dq2-nY-roV" secondAttribute="bottom" id="pD7-9Y-Pkj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xh4-h9-CGA" secondAttribute="bottom" constant="30" id="rcN-Wj-Pin"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xh4-h9-CGA" secondAttribute="bottom" id="rcN-Wj-Pin"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

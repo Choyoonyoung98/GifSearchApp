@@ -55,14 +55,13 @@ extension SearchVC: UICollectionViewDataSource, UICollectionViewDelegate {
         }
         let offsetTolerance = CGFloat(30) //연속되어 매우 많이 호출되는 경우가 발생하여 이를 해결하기 위한 추가 구현
         
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
+        let offsetY = collectionView.contentOffset.y
+        let contentHeight = collectionView.contentSize.height
         
-        if offsetY > contentHeight - (scrollView.frame.height + offsetTolerance), !scrollViewReachedBottom {
+        if offsetY > contentHeight - (collectionView.bounds.size.height  + offsetTolerance), !scrollViewReachedBottom {
             self.scrollViewReachedBottom = true
             self.offset += 25
             getGifList(keyword: gsno(self.searchTextField.text), offset: offset)
-            self.scrollViewReachedBottom = false
         }
     }
 }
