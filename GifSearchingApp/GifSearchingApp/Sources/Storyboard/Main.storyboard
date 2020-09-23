@@ -79,27 +79,15 @@
                                                         <constraint firstAttribute="width" secondItem="zyY-wD-ucP" secondAttribute="height" multiplier="1:1" id="lgY-Fn-M3h"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJq-Qg-Suq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
-                                                    <connections>
-                                                        <action selector="searchMoreBtnTouchUpAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SVh-H1-tPT"/>
-                                                        <segue destination="ApG-eS-Ovr" kind="presentation" id="a3p-LS-eV3"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="mJq-Qg-Suq" firstAttribute="centerX" secondItem="zyY-wD-ucP" secondAttribute="centerX" id="FYV-9e-yOz"/>
                                                 <constraint firstItem="zyY-wD-ucP" firstAttribute="centerX" secondItem="7Ju-vW-qte" secondAttribute="centerX" id="HCY-eB-6Jf"/>
                                                 <constraint firstItem="zyY-wD-ucP" firstAttribute="centerY" secondItem="7Ju-vW-qte" secondAttribute="centerY" id="Htv-hc-MbD"/>
-                                                <constraint firstItem="mJq-Qg-Suq" firstAttribute="height" secondItem="zyY-wD-ucP" secondAttribute="height" id="PZe-JJ-qvQ"/>
-                                                <constraint firstItem="mJq-Qg-Suq" firstAttribute="width" secondItem="zyY-wD-ucP" secondAttribute="width" id="eRz-XH-aeX"/>
                                                 <constraint firstItem="zyY-wD-ucP" firstAttribute="width" secondItem="7Ju-vW-qte" secondAttribute="width" id="fWw-PB-65M"/>
-                                                <constraint firstItem="mJq-Qg-Suq" firstAttribute="centerY" secondItem="zyY-wD-ucP" secondAttribute="centerY" id="kTw-tP-77G"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="120" height="120"/>
                                         <connections>
-                                            <outlet property="btn" destination="mJq-Qg-Suq" id="bFb-iQ-elh"/>
                                             <outlet property="imageView" destination="zyY-wD-ucP" id="fOB-Or-z4c"/>
                                         </connections>
                                     </collectionViewCell>
@@ -125,6 +113,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="검색" image="searchIcon" id="Rbx-nx-7Ez"/>
+                    <navigationItem key="navigationItem" id="78S-pD-9As"/>
                     <connections>
                         <outlet property="collectionView" destination="xh4-h9-CGA" id="EgP-3b-9tD"/>
                         <outlet property="searchTextField" destination="gw5-Tb-3Pu" id="G2S-f6-Qov"/>
@@ -138,32 +127,32 @@
         <!--ModalVC-->
         <scene sceneID="Wp5-dC-HNs">
             <objects>
-                <viewController id="ApG-eS-Ovr" customClass="ModalVC" customModule="GifSearchingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ModalVC" id="ApG-eS-Ovr" customClass="ModalVC" customModule="GifSearchingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="csS-w1-hid">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="8L3-U3-wmr">
-                                <rect key="frame" x="82" y="154" width="250" height="250"/>
+                                <rect key="frame" x="82" y="203" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8L3-U3-wmr" secondAttribute="height" multiplier="1:1" id="6oj-3r-yjc"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="u2Q-4K-4Km">
-                                <rect key="frame" x="299.5" y="121.5" width="65" height="65"/>
-                                <color key="tintColor" red="1" green="0.99997437000274658" blue="0.0" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="299.5" y="170.5" width="65" height="65"/>
+                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="u2Q-4K-4Km" secondAttribute="height" multiplier="1:1" id="Inb-Gu-0eb"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미지 이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVi-fy-hoI">
-                                <rect key="frame" x="0.0" y="424" width="414" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미지 이름" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVi-fy-hoI">
+                                <rect key="frame" x="0.0" y="473" width="414" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqr-BN-ejW">
-                                <rect key="frame" x="82" y="510" width="250" height="41"/>
+                                <rect key="frame" x="82" y="558.5" width="250" height="41"/>
                                 <color key="backgroundColor" red="0.55294117649999996" green="0.79607843140000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fqr-BN-ejW" secondAttribute="height" multiplier="250:41" id="mbv-Yb-aYv"/>
@@ -171,6 +160,9 @@
                                 <state key="normal" title="공유">
                                     <color key="titleColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareTouchUpAction:" destination="ApG-eS-Ovr" eventType="touchUpInside" id="Boq-mN-dn2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -190,10 +182,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z9U-oD-XOY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="8L3-U3-wmr" id="cme-hs-Z0c"/>
+                        <outlet property="shareBtn" destination="fqr-BN-ejW" id="Ela-eX-rdi"/>
+                        <outlet property="titleLabel" destination="IVi-fy-hoI" id="xcM-Hk-J6h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Yv-cC-mnX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1592.753623188406" y="-129.24107142857142"/>
+            <point key="canvasLocation" x="1739" y="-137"/>
         </scene>
         <!--즐겨찾기-->
         <scene sceneID="XEs-CG-Otj">
@@ -221,13 +218,13 @@
                         <color key="selectedImageTintColor" red="0.55294117649999996" green="0.79607843140000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="MEG-v9-rOC"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="xPa-7v-bfd"/>
                         <segue destination="ffh-4S-Fst" kind="relationship" relationship="viewControllers" id="NCq-4h-bMn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I7U-c6-mSY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-233" y="53"/>
+            <point key="canvasLocation" x="-1174" y="44"/>
         </scene>
     </scenes>
     <resources>

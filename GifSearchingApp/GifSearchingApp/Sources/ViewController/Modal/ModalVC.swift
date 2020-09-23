@@ -10,21 +10,30 @@ import UIKit
 
 class ModalVC: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var shareBtn: UIButton!
+    
+    var gifId: String = ""
+    var gifTitle: String = ""
+    var gifImageURL: URL?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if let data = try? Data(contentsOf: gifImageURL!) {
+            self.imageView.image = UIImage(data: data)
+        }
+        self.titleLabel.text = gifTitle
+        
+        setStyle()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setStyle() {
+        self.imageView.roundRadius(radius: 18)
+        self.shareBtn.roundRadius(radius: 12)
     }
-    */
-
+    
+    @IBAction func shareTouchUpAction(_ sender: Any) {
+        
+    }
 }
