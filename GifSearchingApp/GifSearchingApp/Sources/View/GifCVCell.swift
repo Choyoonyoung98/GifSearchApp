@@ -10,10 +10,4 @@ import UIKit
 
 class GifCVCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var btn: UIButton!
-    
-    
-    @IBAction func imageTouchUpAction(_ sender: Any) {
-        
-    }
 }
