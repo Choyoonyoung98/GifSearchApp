@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C01489A251B255800B49BC0 /* GifInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C014899251B255800B49BC0 /* GifInfo.swift */; };
+		4C01489C251B30D900B49BC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C01489B251B30D900B49BC0 /* Main.storyboard */; };
+		4C01489E251B5BB300B49BC0 /* FavoriteGifCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01489D251B5BB300B49BC0 /* FavoriteGifCache.swift */; };
+		4C0148A0251B782900B49BC0 /* ModalVC + myFavoriteListManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01489F251B782900B49BC0 /* ModalVC + myFavoriteListManage.swift */; };
 		4C0310512518ACEE002A38B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0310502518ACEE002A38B0 /* AppDelegate.swift */; };
 		4C0310532518ACEE002A38B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0310522518ACEE002A38B0 /* SceneDelegate.swift */; };
-		4C0310582518ACEE002A38B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0310562518ACEE002A38B0 /* Main.storyboard */; };
 		4C03105A2518ACF3002A38B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0310592518ACF3002A38B0 /* Assets.xcassets */; };
 		4C03105D2518ACF3002A38B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C03105B2518ACF3002A38B0 /* LaunchScreen.storyboard */; };
 		4C0310682518ACF3002A38B0 /* GifSearchingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0310672518ACF3002A38B0 /* GifSearchingAppTests.swift */; };
@@ -21,6 +24,8 @@
 		4C0310882518FA29002A38B0 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0310872518FA29002A38B0 /* UIViewController+Extension.swift */; };
 		4C03108A2518FC42002A38B0 /* HttpResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0310892518FC42002A38B0 /* HttpResponseCode.swift */; };
 		4C03108C2518FEA9002A38B0 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03108B2518FEA9002A38B0 /* APIService.swift */; };
+		4C6CDC5D251A62B500308658 /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CDC5C251A62B500308658 /* FavoriteVC.swift */; };
+		4C6CDC60251A62E500308658 /* ModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CDC5F251A62E500308658 /* ModalVC.swift */; };
 		4C7970782519AC90001AE74A /* GifSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7970772519AC90001AE74A /* GifSearchModel.swift */; };
 		4C79707C2519B2EF001AE74A /* SearcgVC+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79707B2519B2EF001AE74A /* SearcgVC+Networking.swift */; };
 		4C79707E2519DCE0001AE74A /* GetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79707D2519DCE0001AE74A /* GetService.swift */; };
@@ -44,10 +49,13 @@
 		0976BAA313D0A8EDDF33B15B /* Pods_GifSearchingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GifSearchingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22EB9D377D98FDCE4F5EDB9A /* Pods_GifSearchingAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GifSearchingAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B3F052B5830172B5C713533 /* Pods-GifSearchingAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GifSearchingAppTests.release.xcconfig"; path = "Target Support Files/Pods-GifSearchingAppTests/Pods-GifSearchingAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		4C014899251B255800B49BC0 /* GifInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifInfo.swift; sourceTree = "<group>"; };
+		4C01489B251B30D900B49BC0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4C01489D251B5BB300B49BC0 /* FavoriteGifCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGifCache.swift; sourceTree = "<group>"; };
+		4C01489F251B782900B49BC0 /* ModalVC + myFavoriteListManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModalVC + myFavoriteListManage.swift"; sourceTree = "<group>"; };
 		4C03104D2518ACEE002A38B0 /* GifSearchingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GifSearchingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0310502518ACEE002A38B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C0310522518ACEE002A38B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4C0310572518ACEE002A38B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C0310592518ACF3002A38B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C03105C2518ACF3002A38B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C03105E2518ACF3002A38B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +70,8 @@
 		4C0310872518FA29002A38B0 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		4C0310892518FC42002A38B0 /* HttpResponseCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponseCode.swift; sourceTree = "<group>"; };
 		4C03108B2518FEA9002A38B0 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		4C6CDC5C251A62B500308658 /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
+		4C6CDC5F251A62E500308658 /* ModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalVC.swift; sourceTree = "<group>"; };
 		4C7970772519AC90001AE74A /* GifSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifSearchModel.swift; sourceTree = "<group>"; };
 		4C79707B2519B2EF001AE74A /* SearcgVC+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearcgVC+Networking.swift"; sourceTree = "<group>"; };
 		4C79707D2519DCE0001AE74A /* GetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetService.swift; sourceTree = "<group>"; };
@@ -183,8 +193,8 @@
 		4C0310762518AF91002A38B0 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				4C01489B251B30D900B49BC0 /* Main.storyboard */,
 				4C03105B2518ACF3002A38B0 /* LaunchScreen.storyboard */,
-				4C0310562518ACEE002A38B0 /* Main.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -192,10 +202,9 @@
 		4C0310772518AF9C002A38B0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				4C03107D2518C728002A38B0 /* SearchVC.swift */,
-				4C0310812518CFF8002A38B0 /* SearchVC+Textfield.swift */,
-				4C0310852518E03C002A38B0 /* SearchVC + CollectionView.swift */,
-				4C79707B2519B2EF001AE74A /* SearcgVC+Networking.swift */,
+				4C6CDC5E251A62D700308658 /* Modal */,
+				4C6CDC5B251A629300308658 /* Favorite */,
+				4C6CDC5A251A626F00308658 /* Search */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -212,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				4C7970772519AC90001AE74A /* GifSearchModel.swift */,
+				4C014899251B255800B49BC0 /* GifInfo.swift */,
+				4C01489D251B5BB300B49BC0 /* FavoriteGifCache.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,6 +253,34 @@
 				4C79707D2519DCE0001AE74A /* GetService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		4C6CDC5A251A626F00308658 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				4C03107D2518C728002A38B0 /* SearchVC.swift */,
+				4C0310812518CFF8002A38B0 /* SearchVC+Textfield.swift */,
+				4C0310852518E03C002A38B0 /* SearchVC + CollectionView.swift */,
+				4C79707B2519B2EF001AE74A /* SearcgVC+Networking.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		4C6CDC5B251A629300308658 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				4C6CDC5C251A62B500308658 /* FavoriteVC.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		4C6CDC5E251A62D700308658 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				4C6CDC5F251A62E500308658 /* ModalVC.swift */,
+				4C01489F251B782900B49BC0 /* ModalVC + myFavoriteListManage.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		E6BBEC9386AE8C176D7E756C /* Pods */ = {
@@ -339,9 +378,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C01489C251B30D900B49BC0 /* Main.storyboard in Resources */,
 				4C03105D2518ACF3002A38B0 /* LaunchScreen.storyboard in Resources */,
 				4C03105A2518ACF3002A38B0 /* Assets.xcassets in Resources */,
-				4C0310582518ACEE002A38B0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,21 +462,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C01489A251B255800B49BC0 /* GifInfo.swift in Sources */,
 				4C797082251A00DB001AE74A /* UIImageView+Extension.swift in Sources */,
 				4C79707E2519DCE0001AE74A /* GetService.swift in Sources */,
 				4C0310882518FA29002A38B0 /* UIViewController+Extension.swift in Sources */,
 				4C7970802519DDFF001AE74A /* GetGifSearchService.swift in Sources */,
+				4C6CDC5D251A62B500308658 /* FavoriteVC.swift in Sources */,
 				4C03108A2518FC42002A38B0 /* HttpResponseCode.swift in Sources */,
+				4C6CDC60251A62E500308658 /* ModalVC.swift in Sources */,
 				4C03107E2518C728002A38B0 /* SearchVC.swift in Sources */,
 				4C79707C2519B2EF001AE74A /* SearcgVC+Networking.swift in Sources */,
 				4C0310512518ACEE002A38B0 /* AppDelegate.swift in Sources */,
 				4C7970782519AC90001AE74A /* GifSearchModel.swift in Sources */,
 				4C0310802518C9D4002A38B0 /* UIView+Extension.swift in Sources */,
 				4C0310532518ACEE002A38B0 /* SceneDelegate.swift in Sources */,
+				4C01489E251B5BB300B49BC0 /* FavoriteGifCache.swift in Sources */,
 				4C03108C2518FEA9002A38B0 /* APIService.swift in Sources */,
 				4C0310862518E03C002A38B0 /* SearchVC + CollectionView.swift in Sources */,
 				4C0310822518CFF8002A38B0 /* SearchVC+Textfield.swift in Sources */,
 				4C0310842518E00B002A38B0 /* GifCVCell.swift in Sources */,
+				4C0148A0251B782900B49BC0 /* ModalVC + myFavoriteListManage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,14 +504,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4C0310562518ACEE002A38B0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C0310572518ACEE002A38B0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4C03105B2518ACF3002A38B0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

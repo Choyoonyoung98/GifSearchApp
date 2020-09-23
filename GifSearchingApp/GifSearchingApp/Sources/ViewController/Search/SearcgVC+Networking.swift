@@ -25,16 +25,17 @@ extension SearchVC {
                         if let resultData = resResult.data {
                             for res in resultData {
                                 let gifTitle = self.gsno(res.title)
-                                let gifURL = URL(string: self.gsno(res.images?.fixed_width_small_still?.url))!
+                                let gifURL: URL = URL(string: self.gsno(res.images?.fixed_width_small_still?.url)) ?? URL(string: "")!
                                 let gifId = self.gsno(res.id)
-                                self.gifURLList.append(GifInfo(title: gifTitle, gifURL: gifURL, id: gifId))
+                                self.gifDataList.append(GifInfo(title: gifTitle, url: gifURL, id: gifId))
                             }
-                            for a in self.gifURLList {
+                            for a in self.gifDataList {
                                 print(a.title)
                             }
-                            print(self.gifURLList.count)
+                            print(self.gifDataList.count)
                             
                             self.collectionView.reloadData()
+                            self.scrollViewReachedBottom = false
                         }
                     }
                     break
