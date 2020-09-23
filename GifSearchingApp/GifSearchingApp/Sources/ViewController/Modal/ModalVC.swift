@@ -32,6 +32,8 @@ class ModalVC: UIViewController {
     }
     
     func setStyle() {
+        self.imageView.backgroundColor = UIColor.black
+        self.imageView.roundRadius(radius: 18)
         self.shareBtn.roundRadius(radius: 12)
     }
     

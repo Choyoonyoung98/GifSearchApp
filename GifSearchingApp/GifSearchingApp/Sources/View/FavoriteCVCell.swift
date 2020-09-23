@@ -9,5 +9,10 @@
 import UIKit
 
 class FavoriteCVCell: UICollectionViewCell {
-    
+    @IBOutlet weak var imageView: UIImageView!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.backgroundColor = UIColor.black
+        self.roundRadius(radius: 18)
+    }
 }
