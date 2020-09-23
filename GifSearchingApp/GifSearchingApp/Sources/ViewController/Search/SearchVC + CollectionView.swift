@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 extension SearchVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
