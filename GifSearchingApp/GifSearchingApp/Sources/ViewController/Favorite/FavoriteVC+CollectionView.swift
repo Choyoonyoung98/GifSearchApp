@@ -6,7 +6,6 @@
 //  Copyright © 2020 조윤영. All rights reserved.
 //
 import UIKit
-
 extension FavoriteVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return FavoriteGifCache.get().count
@@ -30,6 +29,7 @@ extension FavoriteVC: UICollectionViewDataSource, UICollectionViewDelegate {
                 dvc.gifId = favoriteGifInfoList[indexPath.row].id
                 dvc.gifTitle = favoriteGifInfoList[indexPath.row].title
                 dvc.gifImageURL = favoriteGifInfoList[indexPath.row].url
+                dvc.source = "FavoriteVC"
                 self.present(dvc, animated: true, completion: nil)
             }
         }

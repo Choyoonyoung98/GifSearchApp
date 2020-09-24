@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavoriteVC: UIViewController {
+class FavoriteVC: UIViewController, UIAdaptivePresentationControllerDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var noDataLabel: UILabel!
     
@@ -17,15 +17,24 @@ class FavoriteVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView(_ :)), name: Notification.Name(rawValue: "reloadCollectionView"), object: nil)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        reloadView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    @objc func reloadCollectionView(_ notification: Notification) {
+       reloadView()
+    }
+    
+    func reloadView() {
         initializeFavoriteGifInfoList()
         collectionView.reloadData()
     }
     
     func initializeFavoriteGifInfoList() {
-        if(checkIsListEmpty()) {
+        if checkIsListEmpty() {
             self.noDataLabel.alpha = 1
             return
         }

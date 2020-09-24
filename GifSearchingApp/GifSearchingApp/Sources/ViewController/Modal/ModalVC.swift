@@ -8,8 +8,7 @@
 
 import UIKit
 
-class ModalVC: UIViewController {
-
+class ModalVC: UIViewController, UIAdaptivePresentationControllerDelegate {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var shareBtn: UIButton!
@@ -19,16 +18,16 @@ class ModalVC: UIViewController {
     var gifTitle: String = ""
     var gifImageURL: URL?
     var isMyFavorite: Bool = false
-
+    var source: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.imageView.kf.setImage(with: gifImageURL)
         self.titleLabel.text = gifTitle
-        
         initStarImage()
         setStyle()
     }
-    
+
     func setStyle() {
         self.imageView.backgroundColor = UIColor.black
         self.imageView.roundRadius(radius: 18)
@@ -42,6 +41,7 @@ class ModalVC: UIViewController {
         } else {
             print("remove")
             removeFromMyFavoriteList()
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadCollectionView"), object: nil)
         }
     }
     

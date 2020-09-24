@@ -36,6 +36,7 @@ extension SearchVC: UICollectionViewDataSource, UICollectionViewDelegate {
                 dvc.gifId = gifDataList[indexPath.row].id
                 dvc.gifTitle = gifDataList[indexPath.row].title
                 dvc.gifImageURL = gifDataList[indexPath.row].url
+                dvc.source = "SearchVC"
                 print(indexPath.row)
                 self.present(dvc, animated: true, completion: nil)
             }

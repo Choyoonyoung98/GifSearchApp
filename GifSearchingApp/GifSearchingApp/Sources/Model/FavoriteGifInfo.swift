@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 struct FavoriteGifInfo: Codable {
     var title: String
     var url: URL
