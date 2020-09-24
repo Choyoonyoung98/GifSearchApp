@@ -10,8 +10,6 @@
 
 
 ## [ 라이브러리 ]
-
-1. Server
 - [Alamofire](https://github.com/Alamofire/Alamofire)
 - [Kingfisher](https://github.com/onevcat/Kingfisher)
 - [SwiftJSON](https://github.com/SwiftyJSON/SwiftyJSON)
