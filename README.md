@@ -12,7 +12,8 @@
 - [Alamofire](https://github.com/Alamofire/Alamofire)  
 HTTP 통신 중 Alamofire가 제공하는 Request&Response 체이닝 함수와 URL/JSON 형태의 파라미터 인코딩 기능을 사용하기 위해 채택하였습니다.  
 - [Kingfisher](https://github.com/onevcat/Kingfisher)  
-이미지 로드 속도 개선을 위해 Kingfisher의 이미지 캐시 기능을 사용했습니다.  
+같은 이미지 URL을 매번 새롭게 호출하는 데에서 오는 지연이 검색 페이지와 즐겨찾기 리스트에 이미지 업로드 속도를 늦춘다고 판단했습니다.  
+따라서 이미지 로드 속도 개선을 위해 Kingfisher의 이미지 캐시 기능을 사용했습니다. 
 
 
 ## [ 미리보기 ]
@@ -111,17 +112,88 @@ Middle Layer란 Controller와 Service Manager 사이의 브릿지 역할을 합�
 
 ## [ 프로젝트 이슈 ]
 ### 이미지 리스트 스크롤 끊김 현상
-**1. 문제정의**  
-**2. 원인**  
-**3. 해결책**  
- 
+**1. 문제정의:**  Gifhy API에서 불러온 이미지 데이터들을 '검색화면' `collectionView`의 `cell`에 표시하니 스크롤 성능에 매우 크게 저하됐습니다.  
+**2. 원인:**  무거운 용량의 Gif 이미지를 해당 cell이 화면에 표시될 때마다 재요청하여 화면에 표시해야 했기 때문입니다.  
+**3. 해결책:**  
+따라서 첫 번째로, cell 내의 imageView에 데이터를 업로드하는 과정을 비동기적으로 수행했습니다.  
+```
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+...
+         DispatchQueue.global().async {
+            DispatchQueue.main.async {
+               cell.imageView.kf.setImage(with: url)
+            }
+         }
+...
+}
+```
+두 번째로, `UICollectionViewDataSourcePrefetching` 프로토콜을 활용하여 collectionView cell이 표시될 것을 미리 예상하고 데이터를 미리 불러올 수 있도록 했습니다.  
+```
+extension SearchVC: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if let cellToUpdate = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? GifCVCell {
+                if indexPath.row < gifDataList.count {
+                    let url = gifDataList[indexPath.row].url
+                    DispatchQueue.global().async {
+                        DispatchQueue.main.async {
+                            cellToUpdate.imageView.kf.setImage(with: url)
+                        }
+                    }
+                    if let gifId = Int(gifDataList[indexPath.row].id) {
+                        cellToUpdate.tag = gifId
+                    }
+                }
+            }
+        }
+    }
+}
+```
 ### CollectionView 무한 스크롤 기능
-**1. 문제정의**  
+**1. 문제정의:**  collectionView의 끝에 다다를 때까지 스크롤 했을 때, 새로고침이 동시적으로 여러번 호출되는 현상이 발생했습니다.
 **2. 원인**  
+해당 시점에 추가적인 gif 데이터를 요청하는 getGifList() 함수가 비동기로 실행되는 함수였기 때문이었습니다.    
 **3. 해결책**  
- 
+flag를 추가하여 getGifList() 함수 실행이 끝난 후에 새로운 새로고침을 요청할 수 있도록 구현했습니다.
+```
+func scrollViewDidScroll(_ scrollView: UIScrollView) {
+   if self.collectionView.window == nil {
+      return
+   }
+   let offsetTolerance = CGFloat(30)
+        
+   let offsetY = collectionView.contentOffset.y
+   let contentHeight = collectionView.contentSize.height
+        
+    if offsetY > contentHeight - (collectionView.bounds.size.height  + offsetTolerance), !scrollViewReachedBottom {
+      self.scrollViewReachedBottom = true
+      self.offset += 25
+      getGifList(keyword: gsno(self.searchTextField.text), offset: offset)
+    }
+  }
+}
+```
+```
+func getGifList(keyword: String, offset: Int) {
+   GetGifSearchService.sharedInstance.getGifList(params: params) { (result) in
+      switch result {
+         case .networkSuccess(let data): //200
+            let gifData = data as? GifSearchModel
+            if let resResult = gifData {
+               if let resultData = resResult.data {
+                  ...
+                  self.collectionView.reloadData()
+                  self.scrollViewReachedBottom = false
+               }
+            }
+            break
+            ...
+}
+```
+
 ### UserDefault의 key값에 Custom value 설정하기
 **1. 문제정의**  
+UserDefault의 
 **2. 원인**  
 **3. 해결책**  
 
@@ -129,15 +201,6 @@ Middle Layer란 Controller와 Service Manager 사이의 브릿지 역할을 합�
 **1. 문제정의**  
 **2. 원인**  
 **3. 해결책**  
- 
-### 이미지 캐싱 처리
-**1. 문제정의**
-**2. 원인**
-**3. 해결책**
-
-같은 이미지 URL을 매번 새롭게 호출하는 데에서 오는 지연이 검색 페이지와 즐겨찾기 리스트에 이미지 업로드 속도를 늦춘다고 판단했습니다.  
-따라서 이미지 로드 속도 개선을 위해 Kingfisher의 이미지 캐시 기능을 사용했습니다.  
-
 
 ### 가장 최근에 즐겨찾기한 이미지를 최상단에 노출
 **1. 문제정의**  
