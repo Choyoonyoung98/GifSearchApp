@@ -150,7 +150,7 @@ extension SearchVC: UICollectionViewDataSourcePrefetching {
 }
 ```
 ### CollectionView 무한 스크롤 기능
-**1. 문제정의:**  collectionView의 끝에 다다를 때까지 스크롤 했을 때, 새로고침이 동시적으로 여러번 호출되는 현상이 발생했습니다.
+**1. 문제정의:**  collectionView의 끝에 다다를 때까지 스크롤 했을 때, 새로고침이 동시적으로 여러번 호출되는 현상이 발생했습니다.  
 **2. 원인**  
 해당 시점에 추가적인 gif 데이터를 요청하는 getGifList() 함수가 비동기로 실행되는 함수였기 때문이었습니다.    
 **3. 해결책**  
@@ -193,9 +193,9 @@ func getGifList(keyword: String, offset: Int) {
 
 ### UserDefault의 key값에 Custom value 설정하기
 **1. 문제정의**  
-UserDefault의 value에 Custom 구조체값으로 설정하니 `[User Defaults] Attempt to set a non-property-list` 에러가 발생했습니다.  
+UserDefault의 value에 Custom 구조체값으로 설정하니 `[User Defaults] Attempt to set a non-property-list` 에러가 발생했습니다.   
 **2. 원인**  
-UserDefault가 지원하는 value 타입에서 벗어났기 때문이었습니다.  
+UserDefault가 지원하는 value 타입에서 벗어났기 때문이었습니다.    
 **3. 해결책**  
 따라서 UserDefault가 지원하는 타입꼴로 변경하고, 해당 key값에 접근을 용이하게 하기위해 `FavoriteGifCache` 구조체를 구현했습니다.  
 - FavoriteGifCache 구조체 내에 favorites 키 값에 해당하는 캐시를 불러오기 위한 get 함수 구현
@@ -227,12 +227,13 @@ struct FavoriteGifCache {
 ### Modally Present한 Modal창에서 이전 뷰로 데이터 전달하기
 **1. 문제정의**  
 - 즐겨찾기 화면에서 Modal창을 띄우고 즐겨찾기를 해제한 후 다시 기존의 뷰로 돌아오면 즐겨찾기 화면이 즉각적으로 갱신되지 않았습니다.  
-- Modal창이 내려가는 시점에 기존의 즐겨찾기 화면에서 `viewWillAppear/viewDidAppear`이 호출되고, 해당 시점에 화면 갱신을 기대했으나 예상시나리오처럼 구현되지 않았습니다.  
-**2. 원인**  
+- Modal창이 내려가는 시점에 기존의 즐겨찾기 화면에서 `viewWillAppear/viewDidAppear`이 호출되고, 해당 시점에 화면 갱신을 기대했으나 예상시나리오처럼 구현되지 않았습니다.   
+
+**2. 원인**   
 UIModalPresentationStyle로 뷰가 호출될 때는 기존의 present의 생명주기와 다른 것이 원인이었습니다. modally present할 때 기존 뷰가 `viewWill/Diddisappear` 하지 않기 때문에 Modal창이 사라지더라도 `viewWillAppear` 함수가 호출되지 않습니다. 따라서 `collectionView.reloadData()` 또한 호출되지 않았습니다. 이로 인해 모달창에서 즐겨찾기 리스트가 갱신되지 않는 문제가 발생했습니다.  
 **3. 해결책**  
 modal창에서 즐겨찾기 해제 시, 이전 뷰의 `collectionView.reloadData()`를 호출하는 함수를 사용할 수 있도록 `NotificationCenter`를 
-`NotificationCenter`활용했습니다.
+`NotificationCenter`활용했습니다.  
 - 모달 화면
 ```
 NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadCollectionView"), object: nil)
