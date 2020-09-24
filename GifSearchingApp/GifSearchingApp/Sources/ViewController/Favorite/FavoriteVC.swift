@@ -13,7 +13,7 @@ class FavoriteVC: UIViewController {
     @IBOutlet weak var noDataLabel: UILabel!
     
     let cellIdentifier = "favoriteCell"
-    var favoriteGifInfoList:[GifInfo] = []
+    var favoriteGifInfoList:[FavoriteGifInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +34,10 @@ class FavoriteVC: UIViewController {
         }
         
         favoriteGifInfoList.removeAll()
-        print("=================================")
-        for (key, value) in FavoriteGifCache.get() {
+        for (_, value) in FavoriteGifCache.get() {
             favoriteGifInfoList.append(value)
-            print(value.title)
         }
-        print(favoriteGifInfoList.count)
-        print("=================================")
-        
+        favoriteGifInfoList.sort(by: {$0.createdAt > $1.createdAt})
     }
     
     func checkIsListEmpty() -> Bool {

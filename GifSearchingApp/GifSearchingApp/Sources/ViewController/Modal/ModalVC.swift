@@ -46,8 +46,8 @@ class ModalVC: UIViewController {
     }
     
     @IBAction func shareTouchUpAction(_ sender: Any) {
-        let title = self.titleLabel.text
-        let image = self.imageView.image
+        let title: String = gsno(self.titleLabel.text)
+        let image: UIImage = self.imageView.image ?? UIImage(named: "defaultImage")!
         
         let shareAll: [Any] = [title, image]
         
