@@ -38,6 +38,7 @@ class ModalVC: UIViewController, UIAdaptivePresentationControllerDelegate {
         if(!isMyFavorite) {
             print("add")
             addToMyFavoriteList()
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadCollectionView"), object: nil)
         } else {
             print("remove")
             removeFromMyFavoriteList()
