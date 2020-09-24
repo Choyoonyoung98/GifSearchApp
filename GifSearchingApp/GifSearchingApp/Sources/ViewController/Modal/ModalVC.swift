@@ -22,9 +22,7 @@ class ModalVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let data = try? Data(contentsOf: gifImageURL!) {
-            self.imageView.image = UIImage(data: data)
-        }
+        self.imageView.kf.setImage(with: gifImageURL)
         self.titleLabel.text = gifTitle
         
         initStarImage()

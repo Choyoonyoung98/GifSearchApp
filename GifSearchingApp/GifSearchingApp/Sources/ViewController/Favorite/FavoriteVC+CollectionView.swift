@@ -13,16 +13,15 @@ extension FavoriteVC: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? FavoriteCVCell
-        if indexPath.row < FavoriteGifCache.get().count {
-            let url = favoriteGifInfoList[indexPath.row].url
-            print(url)
-            let data = try? Data(contentsOf: url)
-            if let dataImage = UIImage(data: data!) {
-                cell?.imageView.image = dataImage
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? FavoriteCVCell {
+            if indexPath.row < FavoriteGifCache.get().count {
+                let url = favoriteGifInfoList[indexPath.row].url
+                print(url)
+                cell.imageView.kf.setImage(with: url)
             }
+            return cell
         }
-        return cell!
+        return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
