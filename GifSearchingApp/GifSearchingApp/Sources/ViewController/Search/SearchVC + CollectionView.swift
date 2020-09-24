@@ -15,19 +15,20 @@ extension SearchVC: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? GifCVCell
-        if indexPath.row < gifDataList.count {
-            let url = gifDataList[indexPath.row].url
-            DispatchQueue.global().async {
-                DispatchQueue.main.async {
-                    cell?.imageView.kf.setImage(with: url)
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? GifCVCell {
+            if indexPath.row < gifDataList.count {
+                let url = gifDataList[indexPath.row].url
+                DispatchQueue.global().async {
+                    DispatchQueue.main.async {
+                        cell.imageView.kf.setImage(with: url)
+                    }
+                }
+                if let gifId = Int(gifDataList[indexPath.row].id) {
+                    cell.tag = gifId
                 }
             }
-            if let gifId = Int(gifDataList[indexPath.row].id) {
-                cell?.tag = gifId
-            }
         }
-        return cell!
+        return GifCVCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -48,12 +49,11 @@ extension SearchVC: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     //TODO: 무한스크롤
-    //Fix: 한 번에 많이 호출되는데 이 경우 다시 알아보기
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if self.collectionView.window == nil {
             return
         }
-        let offsetTolerance = CGFloat(30) //연속되어 매우 많이 호출되는 경우가 발생하여 이를 해결하기 위한 추가 구현
+        let offsetTolerance = CGFloat(30)
         
         let offsetY = collectionView.contentOffset.y
         let contentHeight = collectionView.contentSize.height
@@ -97,11 +97,9 @@ extension SearchVC: UICollectionViewDataSourcePrefetching {
             if let cellToUpdate = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? GifCVCell {
                 if indexPath.row < gifDataList.count {
                     let url = gifDataList[indexPath.row].url
-                    
                     DispatchQueue.global().async {
-                        let data = try? Data(contentsOf: url)
                         DispatchQueue.main.async {
-                            cellToUpdate.imageView.image = UIImage(data: data!)
+                            cellToUpdate.imageView.kf.setImage(with: url)
                         }
                     }
                     if let gifId = Int(gifDataList[indexPath.row].id) {
