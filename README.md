@@ -14,10 +14,10 @@
 - [Kingfisher](https://github.com/onevcat/Kingfisher)
 - [SwiftJSON](https://github.com/SwiftyJSON/SwiftyJSON)
 
-## [ Preview ]
+## [ 미리보기 ]
 | 검색 화면                    | 즐겨찾기 화면                                  | 모달 화면                                  |
 |:------------------------------:|:---------------------------------:|:---------------------------------:|
-|![]GitResource/search_page.png) |![](GitResource/favorite_page2.png) |![](GitResource/modal_page) |
+|<img src="GifSearchingApp/GitResource/search_page.png" width="300px" height="650px" title="검색 화면" alt="search_page"></img> |<img src="GifSearchingApp/GitResource/favorite_page2.png" width="300px" height="650px" title="즐겨찾기 화면" alt="favorite_page"> |<img src="GifSearchingApp/GitResource/modal_page_favorite_add.png" width="300px" height="650px" title="모달 화면" alt="modal_page_favorite_add"> |
 
 ### [ 기능 ]
 
