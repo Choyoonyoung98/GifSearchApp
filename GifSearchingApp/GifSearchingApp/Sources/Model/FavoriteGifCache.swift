@@ -9,15 +9,15 @@
 import Foundation
 struct FavoriteGifCache {
     static let key = "fatorites"
-    static func save(value: Dictionary<String, GifInfo>) {
+    static func save(value: Dictionary<String, FavoriteGifInfo>) {
          UserDefaults.standard.set(try? PropertyListEncoder().encode(value), forKey: key)
     }
     
-    static func get() -> Dictionary<String, GifInfo>! {
-        var userData: Dictionary<String, GifInfo>!
+    static func get() -> Dictionary<String, FavoriteGifInfo>! {
+        var userData: Dictionary<String, FavoriteGifInfo>!
         if let data = UserDefaults.standard.value(forKey: key) as? Data {
-            userData = try? PropertyListDecoder().decode(Dictionary<String, GifInfo>.self, from: data)
-            return userData!
+            userData = try? PropertyListDecoder().decode(Dictionary<String, FavoriteGifInfo>.self, from: data)
+            return userData ?? Dictionary<String, FavoriteGifInfo>()
         } else {
             return userData
         }

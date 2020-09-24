@@ -19,9 +19,8 @@ extension SearchVC: UICollectionViewDataSource, UICollectionViewDelegate {
         if indexPath.row < gifDataList.count {
             let url = gifDataList[indexPath.row].url
             DispatchQueue.global().async {
-                let data = try? Data(contentsOf: url)
                 DispatchQueue.main.async {
-                    cell?.imageView.image = UIImage(data: data!)
+                    cell?.imageView.kf.setImage(with: url)
                 }
             }
             if let gifId = Int(gifDataList[indexPath.row].id) {
@@ -37,6 +36,7 @@ extension SearchVC: UICollectionViewDataSource, UICollectionViewDelegate {
                 dvc.gifId = gifDataList[indexPath.row].id
                 dvc.gifTitle = gifDataList[indexPath.row].title
                 dvc.gifImageURL = gifDataList[indexPath.row].url
+                dvc.source = "SearchVC"
                 print(indexPath.row)
                 self.present(dvc, animated: true, completion: nil)
             }

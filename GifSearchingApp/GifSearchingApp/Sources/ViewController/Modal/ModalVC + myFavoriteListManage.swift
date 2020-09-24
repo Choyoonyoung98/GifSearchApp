@@ -25,7 +25,8 @@ extension ModalVC {
             print("!!!!")
             print(favoriteList.count)
             if(!checkFavoriteListSizeIsFull(favoriteList.count)) {
-                favoriteList.updateValue(GifInfo(title: self.gifTitle, url: self.gifImageURL!, id: self.gifId), forKey: gifId)
+                let currentDate = Date()
+                favoriteList.updateValue(FavoriteGifInfo(title: self.gifTitle, url: self.gifImageURL!, id: self.gifId, createdAt: currentDate), forKey: gifId)
                 FavoriteGifCache.save(value: favoriteList)
                 printFavoriteGifList(favoriteList)
                 toggleStarImage()
@@ -42,7 +43,7 @@ extension ModalVC {
         }
     }
     
-    func printFavoriteGifList(_ list: Dictionary<String,GifInfo>) {
+    func printFavoriteGifList(_ list: Dictionary<String,FavoriteGifInfo>) {
         print("================")
         print(list.count)
         

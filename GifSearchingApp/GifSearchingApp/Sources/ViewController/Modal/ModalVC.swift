@@ -8,8 +8,7 @@
 
 import UIKit
 
-class ModalVC: UIViewController {
-
+class ModalVC: UIViewController, UIAdaptivePresentationControllerDelegate {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var shareBtn: UIButton!
@@ -19,19 +18,19 @@ class ModalVC: UIViewController {
     var gifTitle: String = ""
     var gifImageURL: URL?
     var isMyFavorite: Bool = false
-
+    var source: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let data = try? Data(contentsOf: gifImageURL!) {
-            self.imageView.image = UIImage(data: data)
-        }
+        self.imageView.kf.setImage(with: gifImageURL)
         self.titleLabel.text = gifTitle
-        
         initStarImage()
         setStyle()
     }
-    
+
     func setStyle() {
+        self.imageView.backgroundColor = UIColor.black
+        self.imageView.roundRadius(radius: 18)
         self.shareBtn.roundRadius(radius: 12)
     }
     
@@ -39,15 +38,17 @@ class ModalVC: UIViewController {
         if(!isMyFavorite) {
             print("add")
             addToMyFavoriteList()
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadCollectionView"), object: nil)
         } else {
             print("remove")
             removeFromMyFavoriteList()
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadCollectionView"), object: nil)
         }
     }
     
     @IBAction func shareTouchUpAction(_ sender: Any) {
-        let title = self.titleLabel.text
-        let image = self.imageView.image
+        let title: String = gsno(self.titleLabel.text)
+        let image: UIImage = self.imageView.image ?? UIImage(named: "defaultImage")!
         
         let shareAll: [Any] = [title, image]
         
