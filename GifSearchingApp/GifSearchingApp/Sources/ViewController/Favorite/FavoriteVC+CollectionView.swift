@@ -18,7 +18,9 @@ extension FavoriteVC: UICollectionViewDataSource, UICollectionViewDelegate {
             let url = favoriteGifInfoList[indexPath.row].url
             print(url)
             let data = try? Data(contentsOf: url)
-            cell?.imageView.image = UIImage(data: data!)
+            if let dataImage = UIImage(data: data!) {
+                cell?.imageView.image = dataImage
+            }
         }
         return cell!
     }

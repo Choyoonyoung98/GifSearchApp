@@ -10,6 +10,7 @@ import UIKit
 
 class FavoriteVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var noDataLabel: UILabel!
     
     let cellIdentifier = "favoriteCell"
     var favoriteGifInfoList:[GifInfo] = []
@@ -24,6 +25,14 @@ class FavoriteVC: UIViewController {
     }
     
     func initializeFavoriteGifInfoList() {
+        if(checkIsListEmpty()) {
+            self.noDataLabel.alpha = 1
+            return
+        }
+        else {
+             self.noDataLabel.alpha = 0
+        }
+        
         favoriteGifInfoList.removeAll()
         print("=================================")
         for (key, value) in FavoriteGifCache.get() {
@@ -32,5 +41,13 @@ class FavoriteVC: UIViewController {
         }
         print(favoriteGifInfoList.count)
         print("=================================")
+        
+    }
+    
+    func checkIsListEmpty() -> Bool {
+        if FavoriteGifCache.get()?.count == 0 {
+            return true
+        }
+        return false
     }
 }

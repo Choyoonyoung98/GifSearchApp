@@ -255,11 +255,20 @@
                                     <outlet property="delegate" destination="ffh-4S-Fst" id="Itl-ie-wrH"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐겨찾기에 추가한 Gif가 없어요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUs-rK-hsz">
+                                <rect key="frame" x="0.0" y="418" width="414" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="elZ-e3-Ct4" firstAttribute="bottom" secondItem="kvP-nh-3BJ" secondAttribute="bottom" id="0Ad-SK-3N2"/>
                             <constraint firstItem="kvP-nh-3BJ" firstAttribute="top" secondItem="DZn-9Y-1zf" secondAttribute="top" id="8Cm-sM-fJV"/>
+                            <constraint firstItem="xUs-rK-hsz" firstAttribute="centerY" secondItem="elZ-e3-Ct4" secondAttribute="centerY" id="8rA-mS-7LX"/>
+                            <constraint firstItem="elZ-e3-Ct4" firstAttribute="trailing" secondItem="xUs-rK-hsz" secondAttribute="trailing" id="G91-kd-bQW"/>
+                            <constraint firstItem="xUs-rK-hsz" firstAttribute="leading" secondItem="elZ-e3-Ct4" secondAttribute="leading" id="Mkq-Bv-S7W"/>
                             <constraint firstAttribute="trailing" secondItem="kvP-nh-3BJ" secondAttribute="trailing" id="kcP-xq-Y5E"/>
                             <constraint firstItem="kvP-nh-3BJ" firstAttribute="leading" secondItem="elZ-e3-Ct4" secondAttribute="leading" id="pPT-rc-WN8"/>
                         </constraints>
@@ -268,11 +277,12 @@
                     <tabBarItem key="tabBarItem" title="즐겨찾기" image="star" catalog="system" id="NRz-qj-RVf"/>
                     <connections>
                         <outlet property="collectionView" destination="kvP-nh-3BJ" id="5Td-BZ-FLv"/>
+                        <outlet property="noDataLabel" destination="xUs-rK-hsz" id="XZB-Wp-6nT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s7n-fx-IEJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="835" y="568"/>
+            <point key="canvasLocation" x="834.78260869565224" y="567.1875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="neL-JV-gw9">
