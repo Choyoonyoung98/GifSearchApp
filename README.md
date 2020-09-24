@@ -193,17 +193,44 @@ func getGifList(keyword: String, offset: Int) {
 
 ### UserDefault의 key값에 Custom value 설정하기
 **1. 문제정의**  
-UserDefault의 
+UserDefault의 value에 Custom 구조체값으로 설정하니 `[User Defaults] Attempt to set a non-property-list` 에러가 발생했습니다.  
 **2. 원인**  
+UserDefault가 지원하는 value 타입에서 벗어났기 때문이었습니다.  
 **3. 해결책**  
+따라서 UserDefault가 지원하는 타입꼴로 변경하고, 해당 key값에 접근을 용이하게 하기위해 `FavoriteGifCache` 구조체를 구현했습니다.  
+- FavoriteGifCache 구조체 내에 favorites 키 값에 해당하는 캐시를 불러오기 위한 get 함수 구현
+- FavoriteGifCache 구조체 내에 favorites 키 값에 해당하는 캐시에 데이터 추가를 위한 save 함수 구현
+- FavoriteGifCache 구조체 내에 favorites 키 값에 해당하는 캐시에 데이터 삭제를 위한 remove 함수 구현
+```
+struct FavoriteGifCache {
+    static let key = "fatorites"
+    static func save(value: Dictionary<String, FavoriteGifInfo>) {
+         UserDefaults.standard.set(try? PropertyListEncoder().encode(value), forKey: key)
+    }
+    
+    static func get() -> Dictionary<String, FavoriteGifInfo>! {
+        var userData: Dictionary<String, FavoriteGifInfo>!
+        if let data = UserDefaults.standard.value(forKey: key) as? Data {
+            userData = try? PropertyListDecoder().decode(Dictionary<String, FavoriteGifInfo>.self, from: data)
+            return userData ?? Dictionary<String, FavoriteGifInfo>()
+        } else {
+            return userData
+        }
+    }
+    
+    static func remove() {
+        UserDefaults.standard.removeObject(forKey: key)
+    }
+}
+```
 
 ### Modally Present한 Modal창에서 이전 뷰로 데이터 전달하기
 **1. 문제정의**  
+즐겨찾기 화면에서 Modal창을 띄우고 즐겨찾기를 해제한 후 다시 기존의 뷰로 돌아오면 즐겨찾기 화면이 즉각적으로 갱신되지 않았습니다.  
+Modal창이 내려가는 시점에 기존의 즐겨찾기 화면에서 `viewWillAppear/viewDidAppear`이 호출되고, 해당 시점에 화면 갱신을 기대했으나 예상시나리오처럼 구현되지 않았습니다.  
 **2. 원인**  
-**3. 해결책**  
+Modal창이 내려가는 시점에 기존의 즐겨찾기 화면에서 `viewWillAppear/viewDidAppear`이 호출되고, 해당 시점에 화면 갱신을 기대했으나 예상시나리오처럼 구현되지 않았습니다.  
+modally present할 때 기존 뷰가 `viewWill/Diddisappear` 하지 않기 때문에 Modal창이 사라지더라도 `viewWillAppear` 함수가 호출되지 않습니다.`collectionView.reloadData()`가 호출되지 않았습니다. 이로 인해 모달창에서 즐겨찾기를 해제한 Gif가 즉각적으로 리스트에서 사라지지 않음.
 
-### 가장 최근에 즐겨찾기한 이미지를 최상단에 노출
-**1. 문제정의**  
-**2. 원인**  
 **3. 해결책**  
 
