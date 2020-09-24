@@ -8,11 +8,13 @@
 - CocoPods Version:  `1.10.0.beta.2`
 - Language: `Swift`
 
-
 ## [ 라이브러리 ]
-- [Alamofire](https://github.com/Alamofire/Alamofire)
-- [Kingfisher](https://github.com/onevcat/Kingfisher)
-- [SwiftJSON](https://github.com/SwiftyJSON/SwiftyJSON)
+- [Alamofire](https://github.com/Alamofire/Alamofire)  
+HTTP 통신 중 Alamofire가 제공하는 Request&Response 체이닝 함수와 URL/JSON 형태의 파라미터 인코딩 기능을 사용하기 위해 채택하였습니다.  
+- [Kingfisher](https://github.com/onevcat/Kingfisher)  
+같은 이미지 URL을 매번 새롭게 호출하는 데에서 오는 지연이 검색 페이지와 즐겨찾기 리스트에 이미지 업로드 속도를 늦춘다고 판단했습니다.  
+따라서 이미지 로드 속도 개선을 위해 Kingfisher의 이미지 캐시 기능을 사용했습니다.  
+
 
 ## [ 미리보기 ]
 | 검색 화면                    | 즐겨찾기 화면                                  | 모달 화면                                  |
@@ -40,9 +42,12 @@
 |4 |추가|이미지가 로딩될 때 placeholder 이미지 넣기 | O |
 |5 |추가|네트워크 에러 등에 의해 API 통신이 불가능한 경우 Alert 등으로 사용자에게 안내하기 | O |
 
-**그 외 구현 기능**
+#### 2. 즐겨찾기 기능
+| 즐겨찾기 해제                    | 즐겨찾기 추가                                  | 즐겨찾기 갯수 제한                    | 즐겨찾기 화면 결과                                  | 즐겨찾기 개수 0개일 때                                  |   
+|:------------------------------:|:---------------------------------:|:---------------------------------:|:---------------------------------:|:---------------------------------:|
+|<img src="GifSearchingApp/GitResource/modal_page_favorite_remove.png" width="130px" height="300px" title="즐겨찾기 해제" alt="즐겨찾기 해제"></img> |<img src="GifSearchingApp/GitResource/modal_page_favorite_add.png" width="130px" height="300px" title="즐겨찾기 추가" alt="즐겨찾기 추가"> |<img src="GifSearchingApp/GitResource/favorite_limit.png" width="130px" height="300px" title="즐겨찾기 제한" alt="즐겨찾기 제한"></img> |<img src="GifSearchingApp/GitResource/favorite_page.png" width="130px" height="300px" title="즐겨찾기 화면 결과" alt="즐겨찾기 화면 결과"> |<img src="GifSearchingApp/GitResource/no_favorite_data.png" width="130px" height="300px" title="즐겨찾기 데이터 없는 화면" alt="즐겨찾기 데이터 없는 화면"> |
 
-#### 2. 즐겨찾기 기능**
+
 | 번호                    | 중요도                                  | 기능                                  | 구현 여부                                  |
 |:------------------------------:|:---------------------------------:|:---------------------------------:|:---------------------------------:|
 |1 |기본|내가 즐겨찾기한 이미지 볼 수 있게 구현 | O |
@@ -60,8 +65,15 @@
 |11 |추가|이미지가 로딩될 때 placeholder 이미지 넣기 | O |
 |12 |추가|네트워크 에러 등에 의해 API 통신이 불가능한 경우 Alert 등으로 사용자에게 안내하기 | O |
 
-#### 3. 모달 기능** <br>
+#### 3. 모달 기능
 탭1, 탭2에서 이미지 선택 시 보여지는 Modal창
+| 전체 공유                    | 파일 공유                                  |
+|:------------------------------:|:---------------------------------:|
+|<img src="GifSearchingApp/GitResource/sharing_all.png" width="130px" height="300px" title="전체 공유" alt="전체 공유"></img> |<img src="GifSearchingApp/GitResource/sharing_file.png" width="130px" height="300px" title="파일 공유" alt="파일 공유"> |
+
+| 네트워크 오류                    |
+|:------------------------------:|
+|<img src="GifSearchingApp/GitResource/network_failure.png" width="130px" height="300px" title="네트워크 오류" alt="네트워크 오류"></img> |
 
 | 번호                    | 중요도                                  | 기능                                  | 구현 여부                                  |
 |:------------------------------:|:---------------------------------:|:---------------------------------:|:---------------------------------:|
