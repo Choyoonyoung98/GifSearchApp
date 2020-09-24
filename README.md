@@ -88,7 +88,7 @@ HTTP 통신 중 Alamofire가 제공하는 Request&Response 체이닝 함수와 U
 |9 |추가|네트워크 에러 등에 의해 API 통신이 불가능한 경우 Alert 등으로 사용자에게 안내하기 | O |
 
 
-### [ 프로젝트 설계 ]
+## [ 프로젝트 설계 ]
 ### 프로젝트 폴더 구조
 - `Resources` 폴더: 이미지 등과 같은 프로젝트 리소스를 관리  
 - `Sources` 폴더: 프로젝트 소스(Storyboard, ViewController, View, Model, Service)를 관리
