@@ -20,8 +20,8 @@ HTTP 통신 중 Alamofire가 제공하는 Request&Response 체이닝 함수와 U
 |:------------------------------:|:---------------------------------:|:---------------------------------:|
 |<img src="GifSearchingApp/GitResource/search_page.png" width="270px" height="580px" title="검색 화면" alt="search_page"></img> |<img src="GifSearchingApp/GitResource/favorite_page2.png" width="270px" height="580px" title="즐겨찾기 화면" alt="favorite_page"> |<img src="GifSearchingApp/GitResource/modal_page_favorite_add.png" width="270px" height="580px" title="모달 화면" alt="modal_page_favorite_add"> |
 
-### [ 기능 ]
-#### 1. 검색 기능 
+## [ 기능 ]
+### 1. 검색 기능 
 | 번호                    | 중요도                                  | 기능                                  | 구현 여부                                  |
 |:------------------------------:|:---------------------------------:|:---------------------------------:|:---------------------------------:|
 |1 |기본|Giphy API를 이용한 정적인 GIF 이미지 검색 기능 | O |
@@ -41,7 +41,7 @@ HTTP 통신 중 Alamofire가 제공하는 Request&Response 체이닝 함수와 U
 |4 |추가|이미지가 로딩될 때 placeholder 이미지 넣기 | O |
 |5 |추가|네트워크 에러 등에 의해 API 통신이 불가능한 경우 Alert 등으로 사용자에게 안내하기 | O |
 
-#### 2. 즐겨찾기 기능
+### 2. 즐겨찾기 기능
 | 즐겨찾기 해제                    | 즐겨찾기 추가                                  | 즐겨찾기 갯수 제한                    | 즐겨찾기 화면 결과                                  | 즐겨찾기 개수 0개일 때                                  |   
 |:------------------------------:|:---------------------------------:|:---------------------------------:|:---------------------------------:|:---------------------------------:|
 |<img src="GifSearchingApp/GitResource/modal_page_favorite_remove.png" width="130px" height="300px" title="즐겨찾기 해제" alt="즐겨찾기 해제"></img> |<img src="GifSearchingApp/GitResource/modal_page_favorite_add.png" width="130px" height="300px" title="즐겨찾기 추가" alt="즐겨찾기 추가"> |<img src="GifSearchingApp/GitResource/favorite_limit.png" width="130px" height="300px" title="즐겨찾기 제한" alt="즐겨찾기 제한"></img> |<img src="GifSearchingApp/GitResource/favorite_page.png" width="130px" height="300px" title="즐겨찾기 화면 결과" alt="즐겨찾기 화면 결과"> |<img src="GifSearchingApp/GitResource/no_favorite_data.png" width="130px" height="300px" title="즐겨찾기 데이터 없는 화면" alt="즐겨찾기 데이터 없는 화면"> |
@@ -64,7 +64,7 @@ HTTP 통신 중 Alamofire가 제공하는 Request&Response 체이닝 함수와 U
 |11 |추가|이미지가 로딩될 때 placeholder 이미지 넣기 | O |
 |12 |추가|네트워크 에러 등에 의해 API 통신이 불가능한 경우 Alert 등으로 사용자에게 안내하기 | O |
 
-#### 3. 모달 기능
+### 3. 모달 기능
 탭1, 탭2에서 이미지 선택 시 보여지는 Modal창
 | 전체 공유                    | 파일 공유                                  |
 |:------------------------------:|:---------------------------------:|
@@ -88,7 +88,7 @@ HTTP 통신 중 Alamofire가 제공하는 Request&Response 체이닝 함수와 U
 
 
 ### [ 프로젝트 설계 ]
-#### 프로젝트 폴더 구조
+### 프로젝트 폴더 구조
 - `Resources` 폴더: 이미지 등과 같은 프로젝트 리소스를 관리  
 - `Sources` 폴더: 프로젝트 소스(Storyboard, ViewController, View, Model, Service)를 관리
 - `Utils` 폴더: 프로젝트 전체적으로 사용되는 기타 파일을 관리
@@ -97,7 +97,7 @@ HTTP 통신 중 Alamofire가 제공하는 Request&Response 체이닝 함수와 U
 - `SupportingFiles` 폴더: 그 밖의 프로젝트를 지원하는 파일(AppDelegate, SceneDelegate, Info.plist)을 관리
 
 
-#### 네트워크 레이어 방식 도입
+### 네트워크 레이어 방식 도입
 클라이언트에서 **Giphy API** 내용을 읽어들이기 위해서는 많은 함수를 바탕으로 한 요청이 필요하고, 이 과정에서 유사한 코드를 반복적으로 작성해야 했습니다. 이러한 반복적 함수를 제네릭을 바탕으로 해결하기 위해 **네트워크 레이어 방식**을 도입했습니다. 전반적인 구조는 **Controller**, **Middle Layer**, **Service Manager**, **Model** 로 구성됩니다. 
 
 **1. Controller**  
@@ -109,38 +109,38 @@ Middle Layer란 Controller와 Service Manager 사이의 브릿지 역할을 합�
 
 이후 Controller인 `ViewController`에서 상태 코드와 전달받은 데이터에 맞게 `View`를 바꿔주는 형태로 네트워킹을 구현했습니다.  
 
-### [ 프로젝트 이슈 ]
+## [ 프로젝트 이슈 ]
 ### 이미지 리스트 스크롤 끊김 현상
-**1. 문제정의 **
-**2. 원인 **
-**3. 해결책 **
-
+**1. 문제정의**  
+**2. 원인**  
+**3. 해결책**  
+ 
 ### CollectionView 무한 스크롤 기능
-**1. 문제정의 **
-**2. 원인 **
-**3. 해결책 **
-
+**1. 문제정의**  
+**2. 원인**  
+**3. 해결책**  
+ 
 ### UserDefault의 key값에 Custom value 설정하기
-**1. 문제정의 **
-**2. 원인 **
-**3. 해결책 **
+**1. 문제정의**  
+**2. 원인**  
+**3. 해결책**  
 
 ### Modally Present한 Modal창에서 이전 뷰로 데이터 전달하기
-**1. 문제정의 **
-**2. 원인 **
-**3. 해결책 **
-
+**1. 문제정의**  
+**2. 원인**  
+**3. 해결책**  
+ 
 ### 이미지 캐싱 처리
-**1. 문제정의 **
-**2. 원인 **
-**3. 해결책 **
+**1. 문제정의**
+**2. 원인**
+**3. 해결책**
 
 같은 이미지 URL을 매번 새롭게 호출하는 데에서 오는 지연이 검색 페이지와 즐겨찾기 리스트에 이미지 업로드 속도를 늦춘다고 판단했습니다.  
 따라서 이미지 로드 속도 개선을 위해 Kingfisher의 이미지 캐시 기능을 사용했습니다.  
 
 
-### 가장 최근에 즐겨찾기한 이미지를 
-**1. 문제정의 **
-**2. 원인 **
-**3. 해결책 **
+### 가장 최근에 즐겨찾기한 이미지를 최상단에 노출
+**1. 문제정의**  
+**2. 원인**  
+**3. 해결책**  
 
