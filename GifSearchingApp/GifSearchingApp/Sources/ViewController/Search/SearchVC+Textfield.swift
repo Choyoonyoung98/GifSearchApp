@@ -18,7 +18,12 @@ extension SearchVC: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         self.gifDataList.removeAll()
         offset = 0
-        getGifList(keyword: gsno(self.searchTextField.text), offset: offset)
+        if(searchTextField.text != "") {
+            getGifList(keyword: gsno(self.searchTextField.text), offset: offset)
+        } else {
+            getTrendList(keyword: gsno(self.searchTextField.text), offset: offset)
+        }
+
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

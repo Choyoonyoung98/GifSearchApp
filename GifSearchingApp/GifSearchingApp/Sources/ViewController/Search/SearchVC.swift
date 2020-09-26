@@ -19,20 +19,13 @@ class SearchVC: UIViewController {
     var scrollViewReachedBottom: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getTrendList(keyword: gsno(self.searchTextField.text), offset: offset)
+        self.collectionView.reloadData()
         setStyle()
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-    }
-    
-    @IBAction func searchBtnTouchUpAction(_ sender: Any) {
-        self.view.endEditing(true)
-        //MARK: 검색 버튼 선택 시, 검색 시작
-        self.gifDataList.removeAll()
-        self.offset = 0
-        self.getGifList(keyword: gsno(self.searchTextField.text), offset: offset)
     }
     
     func setStyle() {

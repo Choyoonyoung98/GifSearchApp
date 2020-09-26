@@ -34,6 +34,8 @@
 		4C79707E2519DCE0001AE74A /* GetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79707D2519DCE0001AE74A /* GetService.swift */; };
 		4C7970802519DDFF001AE74A /* GetGifSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79707F2519DDFF001AE74A /* GetGifSearchService.swift */; };
 		4C797082251A00DB001AE74A /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C797081251A00DB001AE74A /* UIImageView+Extension.swift */; };
+		4CE3AEEB251F779F0053E1BF /* GetTrendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3AEEA251F779F0053E1BF /* GetTrendService.swift */; };
+		4CE3AEED251F7ED30053E1BF /* GifTrendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3AEEC251F7ED30053E1BF /* GifTrendModel.swift */; };
 		615524686F0417AF0BE85EC3 /* Pods_GifSearchingAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB9D377D98FDCE4F5EDB9A /* Pods_GifSearchingAppTests.framework */; };
 		92D87B549720F776C4C9C9FB /* Pods_GifSearchingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0976BAA313D0A8EDDF33B15B /* Pods_GifSearchingApp.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +85,8 @@
 		4C79707D2519DCE0001AE74A /* GetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetService.swift; sourceTree = "<group>"; };
 		4C79707F2519DDFF001AE74A /* GetGifSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGifSearchService.swift; sourceTree = "<group>"; };
 		4C797081251A00DB001AE74A /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		4CE3AEEA251F779F0053E1BF /* GetTrendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrendService.swift; sourceTree = "<group>"; };
+		4CE3AEEC251F7ED30053E1BF /* GifTrendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifTrendModel.swift; sourceTree = "<group>"; };
 		AA2902CF7E1748310867F140 /* Pods-GifSearchingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GifSearchingApp.debug.xcconfig"; path = "Target Support Files/Pods-GifSearchingApp/Pods-GifSearchingApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C5B155986A2B61B4332AFEB8 /* Pods-GifSearchingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GifSearchingApp.release.xcconfig"; path = "Target Support Files/Pods-GifSearchingApp/Pods-GifSearchingApp.release.xcconfig"; sourceTree = "<group>"; };
 		FF6CD996E96EF35467F5C372 /* Pods-GifSearchingAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GifSearchingAppTests.debug.xcconfig"; path = "Target Support Files/Pods-GifSearchingAppTests/Pods-GifSearchingAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 				4C014899251B255800B49BC0 /* GifInfo.swift */,
 				4C01489D251B5BB300B49BC0 /* FavoriteGifCache.swift */,
 				4C35B5F5251C5E5700C09446 /* FavoriteGifInfo.swift */,
+				4CE3AEEC251F7ED30053E1BF /* GifTrendModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				4C79707F2519DDFF001AE74A /* GetGifSearchService.swift */,
+				4CE3AEEA251F779F0053E1BF /* GetTrendService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -482,6 +488,7 @@
 				4C03107E2518C728002A38B0 /* SearchVC.swift in Sources */,
 				4C79707C2519B2EF001AE74A /* SearcgVC+Networking.swift in Sources */,
 				4C0310512518ACEE002A38B0 /* AppDelegate.swift in Sources */,
+				4CE3AEED251F7ED30053E1BF /* GifTrendModel.swift in Sources */,
 				4C0148A6251BA55F00B49BC0 /* FavoriteVC+CollectionView.swift in Sources */,
 				4C7970782519AC90001AE74A /* GifSearchModel.swift in Sources */,
 				4C0310802518C9D4002A38B0 /* UIView+Extension.swift in Sources */,
@@ -493,6 +500,7 @@
 				4C0310822518CFF8002A38B0 /* SearchVC+Textfield.swift in Sources */,
 				4C35B5F6251C5E5700C09446 /* FavoriteGifInfo.swift in Sources */,
 				4C0310842518E00B002A38B0 /* GifCVCell.swift in Sources */,
+				4CE3AEEB251F779F0053E1BF /* GetTrendService.swift in Sources */,
 				4C0148A0251B782900B49BC0 /* ModalVC + myFavoriteListManage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

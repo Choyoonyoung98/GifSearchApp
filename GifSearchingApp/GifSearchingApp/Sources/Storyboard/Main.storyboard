@@ -33,21 +33,11 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="eo1-tS-XZ6"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwn-15-ZMD">
-                                        <rect key="frame" x="321.5" y="0.0" width="46" height="48"/>
-                                        <connections>
-                                            <action selector="searchBtnTouchUpAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aEQ-GN-zOV"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="gw5-Tb-3Pu" firstAttribute="leading" secondItem="Dq2-nY-roV" secondAttribute="leading" constant="20" id="2ts-TA-PQB"/>
-                                    <constraint firstItem="lwn-15-ZMD" firstAttribute="centerY" secondItem="o2C-JF-017" secondAttribute="centerY" id="7Vx-FI-hRQ"/>
                                     <constraint firstItem="o2C-JF-017" firstAttribute="centerY" secondItem="Dq2-nY-roV" secondAttribute="centerY" id="8yj-Yk-a2x"/>
-                                    <constraint firstItem="lwn-15-ZMD" firstAttribute="width" secondItem="o2C-JF-017" secondAttribute="width" multiplier="2.19048" id="Ad3-bT-Z0S"/>
-                                    <constraint firstItem="lwn-15-ZMD" firstAttribute="centerX" secondItem="o2C-JF-017" secondAttribute="centerX" id="CsB-FN-tJo"/>
-                                    <constraint firstItem="lwn-15-ZMD" firstAttribute="height" secondItem="o2C-JF-017" secondAttribute="height" multiplier="2.28571" id="CsJ-wY-gUN"/>
                                     <constraint firstItem="o2C-JF-017" firstAttribute="width" secondItem="Dq2-nY-roV" secondAttribute="width" multiplier="0.0561497" id="KCl-ID-X93"/>
                                     <constraint firstItem="o2C-JF-017" firstAttribute="leading" secondItem="gw5-Tb-3Pu" secondAttribute="trailing" constant="10" id="Lgz-eP-h3J"/>
                                     <constraint firstItem="gw5-Tb-3Pu" firstAttribute="height" secondItem="Dq2-nY-roV" secondAttribute="height" multiplier="0.9375" id="Q0h-KG-jBC"/>

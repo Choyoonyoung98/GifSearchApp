@@ -62,7 +62,11 @@ extension SearchVC: UICollectionViewDataSource, UICollectionViewDelegate {
         if offsetY > contentHeight - (collectionView.bounds.size.height  + offsetTolerance), !scrollViewReachedBottom {
             self.scrollViewReachedBottom = true
             self.offset += 25
-            getGifList(keyword: gsno(self.searchTextField.text), offset: offset)
+            if(searchTextField.text == "") {
+                getTrendList(keyword: gsno(self.searchTextField.text), offset: offset)
+            } else {
+                getGifList(keyword: gsno(self.searchTextField.text), offset: offset)
+            }
         }
     }
 }
