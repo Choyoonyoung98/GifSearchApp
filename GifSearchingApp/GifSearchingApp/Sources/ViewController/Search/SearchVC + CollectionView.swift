@@ -15,21 +15,22 @@ extension SearchVC: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? GifCVCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? GifCVCell
             if indexPath.row < gifDataList.count {
                 let url = gifDataList[indexPath.row].url
                 DispatchQueue.global().async {
                     DispatchQueue.main.async {
-                        cell.imageView.kf.setImage(with: url)
+                        cell?.imageView.kf.setImage(with: url)
                     }
                 }
                 if let gifId = Int(gifDataList[indexPath.row].id) {
-                    cell.tag = gifId
+                    cell?.tag = gifId
                 }
             }
-        }
-        return GifCVCell()
+        return cell!
     }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let _: GifCVCell = collectionView.cellForItem(at: indexPath) as? GifCVCell {

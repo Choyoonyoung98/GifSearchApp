@@ -12,7 +12,7 @@ class FavoriteVC: UIViewController, UIAdaptivePresentationControllerDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var noDataLabel: UILabel!
     
-    let cellIdentifier = "favoriteCell"
+    let cellIdentifier2 = "favoriteCell"
     var favoriteGifInfoList:[FavoriteGifInfo] = []
     
     override func viewDidLoad() {

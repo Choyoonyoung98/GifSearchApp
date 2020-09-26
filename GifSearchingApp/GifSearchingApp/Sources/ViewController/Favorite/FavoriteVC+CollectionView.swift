@@ -12,7 +12,7 @@ extension FavoriteVC: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? FavoriteCVCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier2, for: indexPath) as? FavoriteCVCell {
             if indexPath.row < FavoriteGifCache.get().count {
                 let url = favoriteGifInfoList[indexPath.row].url
                 print(url)
