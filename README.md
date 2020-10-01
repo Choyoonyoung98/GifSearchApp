@@ -1,6 +1,5 @@
 # Gif 검색/즐겨찾기 앱
 움직이는 gif를 검색할 수 있고, 상세 정보를 볼 수 있으며, 마음에 드는 gif를 즐겨찾기할 수 있는 iOS 앱 개발 프로젝트입니다.
-- 과제 가이드: https://drive.google.com/file/d/1n3TkNyDjOr0Dw7NHMDD2GgbHkN96NmfY/view
 
 ## [ 프로젝트 개발환경 ]
 - iOS Depolyment Target: `Xcode 11.6`
