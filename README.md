@@ -254,3 +254,4 @@ func reloadView() {
     collectionView.reloadData()
 }
 ```
+.
